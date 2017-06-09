@@ -1,0 +1,16 @@
+*  {
+	margin:0;
+	padding:0;
+}
+.conteudo{
+	min-height: 85%;
+	margin: 0px !important;
+	font-size: 15px;
+	padding-bottom: 10px !important;
+}
+
+.rodape{
+	padding-top: 0%;
+	text-align: center !important;
+	min-height: 5.5%;
+}

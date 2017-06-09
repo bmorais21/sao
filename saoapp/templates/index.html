@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block 'conteudo' %}
+<div class="five wide column"></div>
+    <article class="six wide column">
+
+        <nav class="ui text stackable menu">
+            <h2 class="ui header">Entrar</h2>
+        </nav>
+
+        <form method="POST" action="" class="ui content form">
+
+{#            {% if erro %}#}
+{#                <div class="ui negative message"><i class="close icon"></i>#}
+{#                    <div class="header">Usuário ou Senha incorretos!</div>#}
+{#                    <p>Por favor, verifique os dados e tente novamente.</p>#}
+{#                </div>#}
+{#            {% else %}#}
+{#                <div class="ui negative message">#}
+{#                    <div class="header">#}
+{#                        Você precisa estar logado para acessar o sistema!#}
+{#                    </div>#}
+{#                    <p>Por favor, insira os dados para entrar no sistema</p>#}
+{#                </div>#}
+{#            {% endif %}#}
+
+            {% csrf_token %}
+
+            <div class="field">
+                <label>Usuário</label>
+                <div class="ui corner labeled input">
+                    <input type="text" name="login" required>
+                    <div class="ui corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Senha</label>
+                <div class="ui corner labeled input">
+                    <input type="password" name="senha" required>
+                    <div class="ui corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <input type="submit" class="ui right teal button" value="Entrar"/>
+                <i class="ui help inverted circular blue icon"></i><a href="#">Esqueceu a senha?</a>
+            </div>
+
+        </form>
+
+    </article>
+{% endblock %}

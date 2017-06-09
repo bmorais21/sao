@@ -1,0 +1,5 @@
+Django==1.9.10
+image==1.5.5
+Pillow==3.4.2
+Pillow-PIL==0.1.dev0
+psycopg2==2.6.2
