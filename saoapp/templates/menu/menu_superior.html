@@ -1,0 +1,11 @@
+{% load staticfiles %}
+
+<div class="ui inverted huge borderless fluid menu">
+    <a class="header item"><h1>SAO</h1></a>
+    {% if user.is_authenticated %}
+        <div class="right menu">
+            <a class="item">Perfil</a>
+            <a class="item">Sair</a>
+        </div>
+    {% endif %}
+</div>

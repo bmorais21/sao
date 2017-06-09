@@ -8,25 +8,20 @@
         <link rel="stylesheet" href="{% static "css/estilo.css" %}">
     </head>
     <body>
-        <div class="ui inverted huge borderless fluid menu">
-            <a class="header item"><h1>SAO</h1></a>
-            {% if user.is_authenticated%}
-                <div class="right menu">
-                    <a class="item">Perfil</a>
-                    <a class="item">Sair</a>
-                </div>
-            {% endif %}
-        </div>
+        {% include 'menu/menu_superior.html' %}
 
         <section class="ui stackable grid conteudo">
+
+            {% if request.get_full_path != "/" %}
+                {% include 'menu/menu_lateral.html' %}
+            {% endif %}
+
             {% block 'conteudo' %}
 
             {% endblock %}
         </section>
 
-        <footer class="ui inverted vertical footer segment rodape">
-
-        </footer>
+        <footer class="ui inverted vertical footer segment rodape"></footer>
 
         <script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
         <script src="{% static "css/semantic.min.js" %}"></script>
