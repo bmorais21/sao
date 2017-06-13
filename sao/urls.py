@@ -24,8 +24,11 @@ urlpatterns = [
 
     url(r'^$', IndexView.as_view(), name='index'),
     url(r'^painel/$', PainelView.as_view(), name='painel'),
+
     url(r'^aluno/$', AlunoListarView.as_view(), name='aluno_listar'),
+    url(r'^aluno/cadastrar/$', AlunoCadastrarView.as_view(), name='aluno_cadastrar'),
+
     url(r'^ocorrencia/$', OcorrenciaListarView.as_view(), name='ocorrencia_listar'),
     url(r'^turma/$', TurmaListarView.as_view(), name='turma_listar'),
-    url(r'^disciplina/$', DisciplinaListarView.as_view(), name='painel'),
+    url(r'^disciplina/$', DisciplinaListarView.as_view(), name='disciplina_listar'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

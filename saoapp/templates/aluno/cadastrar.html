@@ -1,5 +1,37 @@
 {% extends 'base.html' %}
 
 {% block 'conteudo' %}
-
+    <article class="twelve wide column">
+        <form class="ui form" method="POST" action="{% url 'aluno_cadastrar' %}">
+            <h1 class="ui dividing header">Cadastro de Aluno</h1>
+            <div class="three fields">
+                <div class="field">
+                    <label>Nome</label>
+                    {{ form.nome }}
+                </div>
+                <div class="field">
+                    <label>Sobrenome</label>
+                    {{ form.sobrenome }}
+                </div>
+                <div class="field">
+                    <label>Matrícula</label>
+                    {{ form.matricula }}
+                </div>
+            </div>
+            <div class="three fields">
+                <div class="field">
+                    <label>Telefone</label>
+                    {{ form.telefone }}
+                </div>
+                <div class="field">
+                    <label>E-Mail</label>
+                    {{ form.email }}
+                </div>
+                <div class="field">
+                    <label>Turma</label>
+                    {{ form.turma }}
+                </div>
+            </div>
+        </form>
+    </article>
 {% endblock %}

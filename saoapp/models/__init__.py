@@ -1,0 +1,5 @@
+from alunoModel import AlunoModel
+from turmaModel import TurmaModel
+from disciplinaModel import DisciplinaModel
+from professorModel import ProfessorModel
+from ocorrenciaModel import OcorrenciaModel

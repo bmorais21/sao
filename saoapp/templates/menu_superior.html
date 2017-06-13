@@ -1,0 +1,51 @@
+{% load staticfiles %}
+
+<header class="ui inverted huge borderless fluid menu">
+    <a class="header item"><h1>SAO</h1></a>
+{#    {% if user.is_authenticated %}#}
+        <div class="left menu">
+            {% if request.get_full_path == "/painel/" %}
+                <a href="{%url 'painel' %}" class="active item">Início</a>
+                <a href="{% url 'aluno_listar' %}" class="item">Alunos</a>
+                <a href="{% url 'ocorrencia_listar' %}" class="item">Ocorrências</a>
+                <a href="{% url 'turma_listar' %}" class="item">Turmas</a>
+                <a href="{% url 'disciplina_listar'%}" class="item">Disciplinas</a>
+            {% elif request.get_full_path == "/aluno/"%}
+                <a href="{%url 'painel' %}" class="item">Início</a>
+                <a href="{% url 'aluno_listar' %}" class="active item">Alunos</a>
+                <a href="{% url 'ocorrencia_listar' %}" class="item">Ocorrências</a>
+                <a href="{% url 'turma_listar' %}" class="item">Turmas</a>
+                <a href="{% url 'disciplina_listar'%}" class="item">Disciplinas</a>
+            {% elif request.get_full_path == "/ocorrencia/" %}
+                <a href="{%url 'painel' %}" class="item">Início</a>
+                <a href="{% url 'aluno_listar' %}" class="item">Alunos</a>
+                <a href="{% url 'ocorrencia_listar' %}" class="active item">Ocorrências</a>
+                <a href="{% url 'turma_listar' %}" class="item">Turmas</a>
+                <a href="{% url 'disciplina_listar'%}" class="item">Disciplinas</a>
+            {% elif request.get_full_path == "/turma/" %}
+                <a href="{%url 'painel' %}" class="item">Início</a>
+                <a href="{% url 'aluno_listar' %}" class="item">Alunos</a>
+                <a href="{% url 'ocorrencia_listar' %}" class="item">Ocorrências</a>
+                <a href="{% url 'turma_listar' %}" class="active item">Turmas</a>
+                <a href="{% url 'disciplina_listar'%}" class="item">Disciplinas</a>
+            {% elif request.get_full_path == "/disciplina/" %}
+                <a href="{%url 'painel' %}" class="item">Início</a>
+                <a href="{% url 'aluno_listar' %}" class="item">Alunos</a>
+                <a href="{% url 'ocorrencia_listar' %}" class="item">Ocorrências</a>
+                <a href="{% url 'turma_listar' %}" class="item">Turmas</a>
+                <a href="{% url 'disciplina_listar'%}" class="active item">Disciplinas</a>
+            {% else %}
+                <a href="{%url 'painel' %}" class="item">Início</a>
+                <a href="{% url 'aluno_listar' %}" class="item">Alunos</a>
+                <a href="{% url 'ocorrencia_listar' %}" class="item">Ocorrências</a>
+                <a href="{% url 'turma_listar' %}" class="item">Turmas</a>
+                <a href="{% url 'disciplina_listar'%}" class="item">Disciplinas</a>
+            {% endif %}
+
+        </div>
+        <div class="right menu">
+            <a class="item">Perfil</a>
+            <a class="item">Sair</a>
+        </div>
+{#    {% endif %}#}
+</header>

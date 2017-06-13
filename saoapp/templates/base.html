@@ -8,17 +8,14 @@
         <link rel="stylesheet" href="{% static "css/estilo.css" %}">
     </head>
     <body>
-        {% include 'menu/menu_superior.html' %}
+        {% include 'menu_superior.html' %}
 
         <section class="ui stackable grid conteudo">
-
-            {% if request.get_full_path != "/" %}
-                {% include 'menu/menu_lateral.html' %}
-            {% endif %}
-
+            <div class="two wide column"></div>
             {% block 'conteudo' %}
 
             {% endblock %}
+
         </section>
 
         <footer class="ui inverted vertical footer segment rodape"></footer>
