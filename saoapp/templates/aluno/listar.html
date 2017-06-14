@@ -31,13 +31,13 @@
             </tr>
             </thead>
             <tbody>
-{#            {% if dados %}#}
-{#                {% for dado in dados %}#}
+            {% if dados %}
+                {% for dado in dados %}
                     <tr>
                         <td>{{ dado.nome }}</td>
-                        <td>{{ dado.turma }}</td>
+                        <td>{{ dado.turma.turma }}</td>
                         <td class="collapsing center aligned">
-                            <a class="cursorPointer">
+                            <a class="cursorPointer" href="{% url 'aluno_editar' dado.id %}">
                                 <i class="ui write grey large icon"></i>
                             </a>
                         </td>
@@ -46,12 +46,12 @@
                                 <i class="ui trash red large icon"></i>
                             </a>
                     </tr>
-{#                {% endfor %}#}
-{#            {% else %}#}
+                {% endfor %}
+            {% else %}
                 <tr>
                     <td>Não há dados cadastrados.</td>
                 </tr>
-{#            {% endif %}#}
+            {% endif %}
 
             </tbody>
             <tfoot>

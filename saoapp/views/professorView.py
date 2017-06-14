@@ -5,14 +5,14 @@ from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
 from django.views.generic.base import View
 
-from saoapp.forms.alunoForm import AlunoForm
-from saoapp.models.alunoModel import AlunoModel
+# from saoapp.forms.professorForm import ProfessorForm
+from saoapp.models.professorModel import ProfessorModel
 
 
-class AlunoListarView(View):
+class ProfessorListarView(View):
     @method_decorator(login_required(login_url='/login/'))
     def get(self, request):
-        al = AlunoModel.objects.all()
+        al = ProfessorModel.objects.all()
         paginator = Paginator(al, 10)
         page = request.GET.get('page')
         try:
@@ -21,29 +21,29 @@ class AlunoListarView(View):
             dados = paginator.page(1)
         except EmptyPage:
             dados = paginator.page(paginator.num_pages)
-        return render(request, 'aluno/listar.html', {'dados': dados})
+        return render(request, 'Professor/listar.html', {'dados': dados})
 
 
-class AlunoCadastrarView(View):
+class ProfessorCadastrarView(View):
     def get(self, request):
-        form = AlunoForm()
-        return render(request, 'aluno/cadastrar.html', {'form': form})
+        form = ProfessorForm()
+        return render(request, 'Professor/cadastrar.html', {'form': form})
 
     def post(self, request):
-        form = AlunoForm(request.POST)
+        form = ProfessorForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('aluno_listar')
+        return redirect('Professor_listar')
 
-class AlunoEditarView(View):
+class ProfessorEditarView(View):
     def get(self, request, id=None):
-        al = AlunoModel.objects.get(id=id)
-        form = AlunoModel(instance=al)
-        return render(request, 'aluno/cadastrar.html', {'form': form})
+        al = ProfessorModel.objects.get(id=id)
+        form = ProfessorModel(instance=al)
+        return render(request, 'Professor/cadastrar.html', {'form': form})
 
     def post(self, request, id=None):
-        al = AlunoModel.objects.get(id=id)
-        form = AlunoModel(data=request.POST, instance=al)
+        al = ProfessorModel.objects.get(id=id)
+        form = ProfessorModel(data=request.POST, instance=al)
         if form.is_valid():
             form.save()
-        return redirect('aluno_listar')
+        return redirect('Professor_listar')

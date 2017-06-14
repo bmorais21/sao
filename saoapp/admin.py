@@ -1,3 +1,6 @@
 from django.contrib import admin
+from saoapp.models import *
 
-# Register your models here.
+admin.site.register(TurmaModel)
+admin.site.register(AlunoModel)
+

@@ -2,7 +2,12 @@
 
 {% block 'conteudo' %}
     <article class="twelve wide column">
+    {% if form.instance.id %}
+        <form class="ui form" method="POST" action="{% url 'aluno_editar' form.instance.id %}">
+    {% else %}
         <form class="ui form" method="POST" action="{% url 'aluno_cadastrar' %}">
+    {% endif %}
+            {% csrf_token %}
             <h1 class="ui dividing header">Cadastro de Aluno</h1>
             <div class="three fields">
                 <div class="field">
@@ -31,6 +36,10 @@
                     <label>Turma</label>
                     {{ form.turma }}
                 </div>
+            </div>
+            <div class="actions">
+                <a href="{% url 'aluno_listar' %}" class="ui deny button">Cancelar</a>
+                <input type="submit" class="ui right green button" value="Cadastrar"/>
             </div>
         </form>
     </article>

@@ -1,4 +1,5 @@
 # coding: utf-8
+import user
 
 from django.shortcuts import render
 from django.views.generic.base import View

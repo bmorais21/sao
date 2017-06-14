@@ -2,4 +2,75 @@
 
 {% block 'conteudo' %}
 
+    <article class="twelve wide column">
+
+        <div class="row">
+            <nav class="ui text stackable menu">
+                <h2 class="ui header">
+                    Ocorrências
+                </h2>
+            </nav>
+        </div>
+
+        <table class="ui striped celled unstackable table">
+            <thead>
+            <tr>
+                <th class="no-sort" colspan="5">
+                    <div class="ui black ribbon large label lista">Lista de Ocorrências</div>
+                    <a href="{% url 'ocorrencia_cadastrar' %}" class="right floated ui labeled green icon button">
+                        <i class="icon add"></i>
+                        Adicionar Nova Ocorrência
+                    </a>
+                </th>
+
+            </tr>
+            <tr>
+                <th>Nome do Aluno</th>
+                <th>Turma</th>
+                <th>Data</th>
+                <th class="collapsing center aligned" colspan="1">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if dados %}
+                {% for dado in dados %}
+                    <tr>
+                        <td>{{ dado.aluno.nome }}</td>
+                        <td>{{ dado.turma.turma }}</td>
+                        <td>{{ dado.data }}</td>
+                        <td class="collapsing center aligned">
+                            <a class="cursorPointer">
+                                <i class="ui trash red large icon"></i>
+                            </a>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td>Não há dados cadastrados.</td>
+                </tr>
+            {% endif %}
+
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="5">
+                    <div class="ui right floated pagination secondary menu">
+                        {% if dados.has_previous %}
+                            <a href="?page={{ dados.previous_page_number }}" class="icon item">
+                                <i class="left chevron icon"></i>
+                            </a>
+                        {% endif %}
+                        <a class="item">Página {{ dados.number }} de {{ dados.paginator.num_pages }}</a>
+                        {% if dados.has_next %}
+                            <a href="?page={{ dados.next_page_number }}" class="icon item">
+                                <i class="right chevron icon"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+    </article>
+
 {% endblock %}

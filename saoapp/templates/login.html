@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block 'conteudo' %}
+{% if user.is_authenticated %}
+    <meta http-equiv="refresh" content="0; url=/"/>
+{% else %}
+<div class="three wide column"></div>
+    <article class="six wide column">
+
+        <nav class="ui text stackable menu">
+            <h2 class="ui header">Entrar</h2>
+        </nav>
+
+        <form method="POST" action="{% url 'django.contrib.auth.views.login' %}" class="ui content form">
+
+            {% if form.errors %}
+                <div class="ui negative message"><i class="close icon"></i>
+                    <div class="header">Usuário ou Senha incorretos!</div>
+                    <p>Por favor, verifique os dados e tente novamente.</p>
+                </div>
+            {% endif %}
+
+            {% csrf_token %}
+
+            <div class="field">
+                <label>Usuário</label>
+                {{ form.username }}
+            </div>
+
+            <div class="field">
+                <label>Senha</label>
+                {{ form.password }}
+            </div>
+            <input type="hidden" name="next" value="/"/>
+            <div class="actions">
+                <input type="submit" class="ui right primary button" value="Entrar"/>
+                <i class="ui help inverted circular blue icon"></i><a href="#">Esqueceu a senha?</a>
+            </div>
+
+        </form>
+
+    </article>
+{% endif %}
+{% endblock %}
