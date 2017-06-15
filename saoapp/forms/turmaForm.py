@@ -10,12 +10,6 @@ class TurmaForm(forms.ModelForm):
         )
     )
 
-    def save(self, commit=True):
-        agente = super(TurmaForm, self).save(commit=False)
-        if commit:
-            agente.save()
-        return agente
-
     class Meta:
         model = TurmaModel
-        fields = "__all__"
+        exclude = ('ativo',)

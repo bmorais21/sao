@@ -13,4 +13,4 @@ class DisciplinaForm(forms.ModelForm):
 
     class Meta:
         model = DisciplinaModel
-        fields = "__all__"
+        exclude = ('ativo',)

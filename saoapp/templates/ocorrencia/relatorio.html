@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block 'conteudo' %}
+    <article class="twelve wide column">
+        <h1 class="ui dividing header">Relatório da Ocorrência</h1>
+        <div class="ui form">
+            <div class="four fields">
+                <div class="field">
+                    <label>Aluno</label>
+                    {{ dado.aluno }}
+                </div>
+                <div class="field">
+                    <label>Professor</label>
+                    {{ dado.professor }}
+                </div>
+                <div class="field">
+                    <label>Disciplina</label>
+                    {{ dado.disciplina }}
+                </div>
+                <div class="field">
+                    <label>Turma</label>
+                    {{ dado.aluno.turma }}
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>Data</label>
+                    {{ dado.data }}
+                </div>
+                <div class="field">
+                    <label>Hora</label>
+                    {{ dado.hora }}
+                </div>
+            </div>
+            <div class="field">
+                <label>Descrição</label>
+                {{ dado.descricao }}
+            </div>
+            <div class="actions">
+                <a href="{% url 'ocorrencia_listar' %}" class="ui deny button">Voltar</a>
+            </div>
+        </div>
+    </article>
+{% endblock %}

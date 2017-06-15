@@ -40,8 +40,12 @@
                             </a>
                         </td>
                         <td class="collapsing center aligned">
-                            <a class="cursorPointer">
-                                <i class="ui trash red large icon"></i>
+                            <a class="cursorPointer"  href="{% url 'turma_ocultar' dado.id %}">
+                                {% if dado.ativo == False %}
+                                    <i class="ui refresh green large icon"></i>
+                                {% else %}
+                                    <i class="ui trash red large icon"></i>
+                                {% endif %}
                             </a>
                     </tr>
                 {% endfor %}

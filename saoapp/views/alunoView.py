@@ -25,10 +25,12 @@ class AlunoListarView(View):
 
 
 class AlunoCadastrarView(View):
+    @method_decorator(login_required(login_url='/login/'))
     def get(self, request):
         form = AlunoForm()
         return render(request, 'aluno/cadastrar.html', {'form': form})
 
+    @method_decorator(login_required(login_url='/login/'))
     def post(self, request):
         form = AlunoForm(request.POST)
         if form.is_valid():
@@ -36,14 +38,27 @@ class AlunoCadastrarView(View):
         return redirect('aluno_listar')
 
 class AlunoEditarView(View):
+    @method_decorator(login_required(login_url='/login/'))
     def get(self, request, id=None):
         al = AlunoModel.objects.get(id=id)
         form = AlunoModel(instance=al)
         return render(request, 'aluno/cadastrar.html', {'form': form})
 
+    @method_decorator(login_required(login_url='/login/'))
     def post(self, request, id=None):
         al = AlunoModel.objects.get(id=id)
         form = AlunoModel(data=request.POST, instance=al)
         if form.is_valid():
             form.save()
+        return redirect('aluno_listar')
+
+class AlunoOcultarView(View):
+    @method_decorator(login_required(login_url='/login/'))
+    def get(self, request, id=None):
+        al = AlunoModel.objects.get(id=id)
+        if al.ativo:
+            al.ativo = False
+        else:
+            al.ativo = True
+        al.save()
         return redirect('aluno_listar')

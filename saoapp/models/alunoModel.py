@@ -3,6 +3,7 @@
 from django.db import models
 from turmaModel import TurmaModel
 
+
 class AlunoModel(models.Model):
     matricula = models.PositiveIntegerField(unique=True)
     nome = models.CharField(max_length=45)
@@ -10,6 +11,7 @@ class AlunoModel(models.Model):
     email = models.CharField(max_length=45)
     telefone = models.IntegerField()
     turma = models.ForeignKey(TurmaModel)
+    ativo = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.nome

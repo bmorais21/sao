@@ -2,4 +2,80 @@
 
 {% block 'conteudo' %}
 
+    <article class="twelve wide column">
+
+        <div class="row">
+            <nav class="ui text stackable menu">
+                <h2 class="ui header">
+                    Professores
+                </h2>
+            </nav>
+        </div>
+
+        <table class="ui striped celled unstackable table">
+            <thead>
+            <tr>
+                <th class="no-sort" colspan="5">
+                    <div class="ui black ribbon large label lista">Lista de Professores</div>
+                    <a href="{% url 'professor_cadastrar' %}" class="right floated ui labeled green icon button">
+                        <i class="icon add"></i>
+                        Adicionar Novo Professor
+                    </a>
+                </th>
+
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <th class="collapsing center aligned" colspan="2">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if dados %}
+                {% for dado in dados %}
+                    <tr>
+                        <td>{{ dado.first_name }} {{ dado.last_name }}</td>
+                        <td class="collapsing center aligned">
+                            <a class="cursorPointer" href="{% url 'professor_editar' dado.id %}">
+                                <i class="ui write grey large icon"></i>
+                            </a>
+                        </td>
+                        <td class="collapsing center aligned">
+                            <a class="cursorPointer"  href="{% url 'professor_ocultar' dado.id %}">
+                                {% if dado.is_active == False %}
+                                    <i class="ui add user green large icon"></i>
+                                {% else %}
+                                    <i class="ui remove user red large icon"></i>
+                                {% endif %}
+                            </a>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td>Não há dados cadastrados.</td>
+                </tr>
+            {% endif %}
+
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="5">
+                    <div class="ui right floated pagination secondary menu">
+                        {% if dados.has_previous %}
+                            <a href="?page={{ dados.previous_page_number }}" class="icon item">
+                                <i class="left chevron icon"></i>
+                            </a>
+                        {% endif %}
+                        <a class="item">Página {{ dados.number }} de {{ dados.paginator.num_pages }}</a>
+                        {% if dados.has_next %}
+                            <a href="?page={{ dados.next_page_number }}" class="icon item">
+                                <i class="right chevron icon"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+    </article>
+
 {% endblock %}

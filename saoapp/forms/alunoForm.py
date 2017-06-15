@@ -3,6 +3,7 @@
 from django import forms
 from saoapp.models import AlunoModel, TurmaModel
 
+
 class AlunoForm(forms.ModelForm):
     nome = forms.CharField(
         widget=forms.TextInput(
@@ -17,7 +18,7 @@ class AlunoForm(forms.ModelForm):
     )
 
     email = forms.EmailField(
-        widget=forms.TextInput(
+        widget=forms.EmailInput(
             attrs={'required': 'True', 'max_length': 45, 'placeholder': 'E-Mail'}
         )
     )
@@ -44,4 +45,4 @@ class AlunoForm(forms.ModelForm):
 
     class Meta:
         model = AlunoModel
-        fields = "__all__"
+        exclude = ('ativo',)

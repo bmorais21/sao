@@ -25,8 +25,9 @@
 
             </tr>
             <tr>
-                <th>Nome do Aluno</th>
+                <th>Aluno</th>
                 <th>Turma</th>
+                <th>Disciplina</th>
                 <th>Data</th>
                 <th class="collapsing center aligned" colspan="1">Ações</th>
             </tr>
@@ -36,12 +37,14 @@
                 {% for dado in dados %}
                     <tr>
                         <td>{{ dado.aluno.nome }}</td>
-                        <td>{{ dado.turma.turma }}</td>
+                        <td>{{ dado.aluno.turma }}</td>
+                        <td>{{ dado.disciplina }}</td>
                         <td>{{ dado.data }}</td>
                         <td class="collapsing center aligned">
-                            <a class="cursorPointer">
-                                <i class="ui trash red large icon"></i>
+                            <a href="{% url 'ocorrencia_relatorio' dado.id %}" class="cursorPointer">
+                                <i class="ui file grey large icon"></i>
                             </a>
+                        </td>
                     </tr>
                 {% endfor %}
             {% else %}
