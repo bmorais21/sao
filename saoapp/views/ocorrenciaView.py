@@ -35,6 +35,7 @@ class OcorrenciaCadastrarView(View):
         form = OcorrenciaForm(request.POST)
         t = TurmaModel.objects.get(pk=request.POST['aluno'])
         form.turma_id = t.id
+        print form.errors
         if form.is_valid():
             form.save()
         return redirect('ocorrencia_listar')

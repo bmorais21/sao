@@ -14,7 +14,7 @@
         <form method="POST" action="{% url 'login' %}" class="ui content form">
 
             {% if form.errors %}
-                <div class="ui negative message"><i class="close icon"></i>
+                <div class="ui negative message">
                     <div class="header">Usuário ou Senha incorretos!</div>
                     <p>Por favor, verifique os dados e tente novamente.</p>
                 </div>
@@ -34,7 +34,6 @@
             <input type="hidden" name="next" value="/"/>
             <div class="actions">
                 <input type="submit" class="ui right primary button" value="Entrar"/>
-{#                <i class="ui help inverted circular blue icon"></i><a href="#">Esqueceu a senha?</a>#}
             </div>
 
         </form>

@@ -118,7 +118,6 @@ USE_TZ = True
 
 DATE_FORMAT = 'd/m/Y'
 TIME_FORMAT = 'H:i'
-DATE_INPUT_FORMATS = ['%d/%m/%Y']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/

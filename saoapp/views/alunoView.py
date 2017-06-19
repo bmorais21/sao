@@ -8,57 +8,74 @@ from django.views.generic.base import View
 from saoapp.forms.alunoForm import AlunoForm
 from saoapp.models.alunoModel import AlunoModel
 
-
 class AlunoListarView(View):
     @method_decorator(login_required(login_url='/login/'))
     def get(self, request):
-        al = AlunoModel.objects.all()
-        paginator = Paginator(al, 10)
-        page = request.GET.get('page')
-        try:
-            dados = paginator.page(page)
-        except PageNotAnInteger:
-            dados = paginator.page(1)
-        except EmptyPage:
-            dados = paginator.page(paginator.num_pages)
-        return render(request, 'aluno/listar.html', {'dados': dados})
+        if request.user.is_superuser:
+            al = AlunoModel.objects.all()
+            paginator = Paginator(al, 10)
+            page = request.GET.get('page')
+            try:
+                dados = paginator.page(page)
+            except PageNotAnInteger:
+                dados = paginator.page(1)
+            except EmptyPage:
+                dados = paginator.page(paginator.num_pages)
+            return render(request, 'aluno/listar.html', {'dados': dados})
+        else:
+            return redirect('index')
 
 
 class AlunoCadastrarView(View):
     @method_decorator(login_required(login_url='/login/'))
     def get(self, request):
-        form = AlunoForm()
-        return render(request, 'aluno/cadastrar.html', {'form': form})
+        if request.user.is_superuser:
+            form = AlunoForm()
+            return render(request, 'aluno/cadastrar.html', {'form': form})
+        else:
+            return redirect('index')
 
     @method_decorator(login_required(login_url='/login/'))
     def post(self, request):
-        form = AlunoForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return redirect('aluno_listar')
+        if request.user.is_superuser:
+            form = AlunoForm(request.POST)
+            if form.is_valid():
+                form.save()
+            return redirect('aluno_listar')
+        else:
+            return redirect('index')
 
 class AlunoEditarView(View):
     @method_decorator(login_required(login_url='/login/'))
     def get(self, request, id=None):
-        al = AlunoModel.objects.get(id=id)
-        form = AlunoModel(instance=al)
-        return render(request, 'aluno/cadastrar.html', {'form': form})
+        if request.user.is_superuser:
+            al = AlunoModel.objects.get(id=id)
+            form = AlunoForm(instance=al)
+            return render(request, 'aluno/cadastrar.html', {'form': form})
+        else:
+            return redirect('index')
 
     @method_decorator(login_required(login_url='/login/'))
     def post(self, request, id=None):
-        al = AlunoModel.objects.get(id=id)
-        form = AlunoModel(data=request.POST, instance=al)
-        if form.is_valid():
-            form.save()
-        return redirect('aluno_listar')
+        if request.user.is_superuser:
+            al = AlunoModel.objects.get(id=id)
+            form = AlunoForm(data=request.POST, instance=al)
+            if form.is_valid():
+                form.save()
+            return redirect('aluno_listar')
+        else:
+            return redirect('index')
 
 class AlunoOcultarView(View):
     @method_decorator(login_required(login_url='/login/'))
     def get(self, request, id=None):
-        al = AlunoModel.objects.get(id=id)
-        if al.ativo:
-            al.ativo = False
+        if request.user.is_superuser:
+            al = AlunoModel.objects.get(id=id)
+            if al.ativo:
+                al.ativo = False
+            else:
+                al.ativo = True
+            al.save()
+            return redirect('aluno_listar')
         else:
-            al.ativo = True
-        al.save()
-        return redirect('aluno_listar')
+            return redirect('index')
