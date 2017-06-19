@@ -35,7 +35,7 @@ class OcorrenciaForm(forms.ModelForm):
             attrs={'class': 'ui fluid dropdown', 'required': 'True'}
         ),
         queryset=ProfessorModel.objects.all(),
-        empty_label="Selecione uma turma"
+        empty_label="Selecione um Professor"
     )
 
     disciplina = forms.ModelChoiceField(
@@ -48,4 +48,4 @@ class OcorrenciaForm(forms.ModelForm):
 
     class Meta:
         model = OcorrenciaModel
-        fields = "__all__"
+        exclude = ('ativo',)

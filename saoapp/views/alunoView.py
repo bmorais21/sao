@@ -13,7 +13,7 @@ class AlunoListarView(View):
     def get(self, request):
         if request.user.is_superuser:
             al = AlunoModel.objects.all()
-            paginator = Paginator(al, 10)
+            paginator = Paginator(al, 5)
             page = request.GET.get('page')
             try:
                 dados = paginator.page(page)

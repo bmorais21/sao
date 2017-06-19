@@ -33,7 +33,7 @@
                 <a href="{% url 'ocorrencia_listar' %}" class="item">Ocorrências</a>
                 <a href="{% url 'aluno_listar' %}" class="item">Alunos</a>
                 <a href="{% url 'turma_listar' %}" class="item">Turmas</a>
-                <a href="{% url 'disciplina_listar'%}" class="active item">Disciplinas</a>
+                <a href="{% url 'disciplina_listar'%}" class="item">Disciplinas</a>
                 <a href="{% url 'professor_listar'%}" class="active item">Professores</a>
             {% else %}
                 <a href="{% url 'ocorrencia_listar' %}" class="item">Ocorrências</a>
@@ -51,6 +51,11 @@
         {% endif %}
         </div>
         <div class="right menu">
+            {% if request.get_full_path == "/perfil/" %}
+                <a href="{% url 'perfil' %}" class="active item">Trocar Senha</a>
+            {% else %}
+                <a href="{% url 'perfil' %}" class="item">Trocar Senha</a>
+            {% endif %}
             <a href="{% url 'logout' %}" class="item">Sair</a>
         </div>
     {% endif %}

@@ -14,7 +14,7 @@ class DisciplinaListarView(View):
     def get(self, request):
         if request.user.is_superuser:
             dc = DisciplinaModel.objects.all()
-            paginator = Paginator(dc, 10)
+            paginator = Paginator(dc, 5)
             page = request.GET.get('page')
             try:
                 dados = paginator.page(page)

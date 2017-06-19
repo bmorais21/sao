@@ -2,31 +2,43 @@
 
 {% block 'conteudo' %}
     <article class="twelve wide column">
-        <form class="ui form" method="POST" action="{% url 'ocorrencia_cadastrar' %}">
+        {% if form.instance.id %}
+            <form class="ui form" method="POST" action="{% url 'ocorrencia_editar' form.instance.id %}">
+        {% else %}
+            <form class="ui form" method="POST" action="{% url 'ocorrencia_cadastrar' %}">
+        {% endif %}
             {% csrf_token %}
             <h1 class="ui dividing header">Cadastro de Ocorrência</h1>
-            <div class="four fields">
+            {% if user.is_superuser %}
+            <div class="three fields">
+            {% else %}
+            <div class="two fields">
+            {% endif %}
                 <div class="field">
                     <label>Aluno</label>
                     {{ form.aluno }}
                 </div>
+                {% if user.is_superuser %}
                 <div class="field">
                     <label>Professor</label>
                     {{ form.professor }}
                 </div>
+                {% else %}
+                    <input type="hidden" name="professor" id="id_professor" value="{{ user.id }}"/>
+                {% endif %}
                 <div class="field">
                     <label>Disciplina</label>
                     {{ form.disciplina }}
                 </div>
-                <div class="two fields">
-                    <div class="field">
-                        <label>Data</label>
-                        {{ form.data }}
-                    </div>
-                    <div class="field">
-                        <label>Hora</label>
-                        {{ form.hora }}
-                    </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>Data</label>
+                    {{ form.data }}
+                </div>
+                <div class="field">
+                    <label>Hora</label>
+                    {{ form.hora }}
                 </div>
             </div>
             <div class="field">

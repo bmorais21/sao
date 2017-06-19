@@ -12,7 +12,7 @@ class TurmaListarView(View):
     def get(self, request):
         if request.user.is_superuser:
             tr = TurmaModel.objects.all()
-            paginator = Paginator(tr, 10)
+            paginator = Paginator(tr, 5)
             page = request.GET.get('page')
             try:
                 dados = paginator.page(page)

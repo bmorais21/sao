@@ -4,3 +4,4 @@ from ocorrenciaView import *
 from turmaView import *
 from disciplinaView import *
 from professorView import *
+from perfilView import *

@@ -10,5 +10,6 @@ class OcorrenciaModel(models.Model):
     aluno = models.ForeignKey(AlunoModel)
     professor = models.ForeignKey(ProfessorModel)
     disciplina = models.ForeignKey(DisciplinaModel)
+    ativo = models.BooleanField(default=True)
 
 
