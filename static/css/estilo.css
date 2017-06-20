@@ -2,8 +2,13 @@
 	margin:0;
 	padding:0;
 }
+
+.superior{
+	min-height: 5%;
+}
+
 .conteudo{
-	min-height: 85%;
+	min-height: 90%;
 	margin: 0px !important;
 	font-size: 15px;
 	padding-bottom: 10px !important;
@@ -12,8 +17,8 @@
 .rodape{
 	padding-top: 0%;
 	text-align: center !important;
-	min-height: 5.5%;
-	bottom: 0px;
+	min-height: 5%;
+	bottom: 0px !important;
 }
 
 .ui.black.label.lista {

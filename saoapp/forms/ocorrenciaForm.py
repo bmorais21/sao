@@ -26,7 +26,7 @@ class OcorrenciaForm(forms.ModelForm):
         widget=forms.Select(
             attrs={'class': 'ui fluid dropdown', 'required': 'True'}
         ),
-        queryset=AlunoModel.objects.all(),
+        queryset=AlunoModel.objects.filter(ativo=True),
         empty_label="Selecione um Aluno"
     )
 
@@ -34,7 +34,7 @@ class OcorrenciaForm(forms.ModelForm):
         widget=forms.Select(
             attrs={'class': 'ui fluid dropdown', 'required': 'True'}
         ),
-        queryset=ProfessorModel.objects.all(),
+        queryset=ProfessorModel.objects.filter(is_active=True),
         empty_label="Selecione um Professor"
     )
 
@@ -42,7 +42,7 @@ class OcorrenciaForm(forms.ModelForm):
         widget=forms.Select(
             attrs={'class': 'ui fluid dropdown', 'required': 'True'}
         ),
-        queryset=DisciplinaModel.objects.all(),
+        queryset=DisciplinaModel.objects.filter(ativo=True),
         empty_label="Selecione uma turma"
     )
 
