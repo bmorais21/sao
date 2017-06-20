@@ -39,7 +39,7 @@ class AlunoForm(forms.ModelForm):
         widget=forms.Select(
             attrs={'class': 'ui fluid dropdown', 'required': 'True'}
         ),
-        queryset=TurmaModel.objects.all(),
+        queryset=TurmaModel.objects.filter(ativo=True),
         empty_label="Selecione uma turma"
     )
 
