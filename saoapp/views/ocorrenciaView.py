@@ -37,7 +37,8 @@ class OcorrenciaCadastrarView(View):
         form = OcorrenciaForm(request.POST)
         if form.is_valid():
             form.save()
-        print form.errors
+        else:
+            return render(request, 'ocorrencia/cadastrar.html', {'form': form})
         return redirect('ocorrencia_listar')
 
 class OcorrenciaEditarView(View):
@@ -53,6 +54,8 @@ class OcorrenciaEditarView(View):
         form = OcorrenciaForm(data=request.POST, instance=oc)
         if form.is_valid():
             form.save()
+        else:
+            return render(request, 'ocorrencia/cadastrar.html', {'form': form})
         return redirect('ocorrencia_listar')
 
 class OcorrenciaOcultarView(View):

@@ -6,7 +6,7 @@ from saoapp.models import TurmaModel
 class TurmaForm(forms.ModelForm):
     turma = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'max_length': 45, 'placeholder': 'Turma'}
+            attrs={'required': 'True', 'maxlength': 45, 'placeholder': 'Turma'}
         )
     )
 

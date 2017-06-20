@@ -7,7 +7,7 @@ from saoapp.models import DisciplinaModel
 class DisciplinaForm(forms.ModelForm):
     disciplina = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'max_length': 45, 'placeholder': 'Disciplina'}
+            attrs={'required': 'True', 'maxlength': 45, 'placeholder': 'Disciplina'}
         )
     )
 

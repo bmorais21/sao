@@ -35,15 +35,30 @@
                 <div class="field">
                     <label>Data</label>
                     {{ form.data }}
+                    {% if form.data.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.data.errors }}
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="field">
                     <label>Hora</label>
                     {{ form.hora }}
+                    {% if form.hora.errors %}
+                        <div class="ui red pointing label">
+                            {{ form.hora.errors }}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
             <div class="field">
                 <label>Descrição</label>
                 {{ form.descricao }}
+                {% if form.descricao.errors %}
+                    <div class="ui red pointing label">
+                        {{ form.descricao.errors }}
+                    </div>
+                {% endif %}
             </div>
             <div class="actions">
                 <a href="{% url 'ocorrencia_listar' %}" class="ui deny button">Cancelar</a>

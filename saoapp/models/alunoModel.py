@@ -5,7 +5,7 @@ from turmaModel import TurmaModel
 
 
 class AlunoModel(models.Model):
-    matricula = models.PositiveIntegerField(unique=True)
+    matricula = models.BigIntegerField(unique=True)
     nome = models.CharField(max_length=45)
     sobrenome = models.CharField(max_length=45)
     email = models.CharField(max_length=45)

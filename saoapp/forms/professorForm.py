@@ -6,31 +6,31 @@ from saoapp.models import ProfessorModel
 class ProfessorForm(forms.ModelForm):
     first_name = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'max_length': 45, 'placeholder': 'Nome'}
+            attrs={'required': 'True', 'pattern': '^[a-zA-Z\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Nome'}
         )
     )
 
     last_name = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'max_length': 45, 'placeholder': 'Sobrenome'}
+            attrs={'required': 'True', 'pattern': '^[a-zA-Z\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Sobrenome'}
         )
     )
 
     email = forms.EmailField(
         widget=forms.EmailInput(
-            attrs={'required': 'True', 'max_length': 45, 'placeholder': 'E-Mail'}
+            attrs={'required': 'True', 'maxlength': 45, 'placeholder': 'E-Mail'}
         )
     )
 
     username = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'max_length': 45, 'placeholder': 'Nome'}
+            attrs={'required': 'True', 'maxlength': 45, 'placeholder': 'Nome'}
         )
     )
 
     password = forms.CharField(
         widget=forms.PasswordInput(
-            attrs={'required': 'True', 'max_length': 45, 'placeholder': 'Senha'}
+            attrs={'required': 'True', 'maxlength': 45, 'placeholder': 'Senha'}
         )
     )
 

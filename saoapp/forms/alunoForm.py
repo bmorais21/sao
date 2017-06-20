@@ -7,31 +7,31 @@ from saoapp.models import AlunoModel, TurmaModel
 class AlunoForm(forms.ModelForm):
     nome = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'max_length': 45, 'placeholder': 'Nome'}
+            attrs={'required': 'True', 'pattern': '^[a-zA-Z\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Nome'}
         )
     )
 
     sobrenome = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'max_length': 45, 'placeholder': 'Sobrenome'}
+            attrs={'required': 'True', 'pattern': '^[a-zA-Z\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Sobrenome'}
         )
     )
 
     email = forms.EmailField(
         widget=forms.EmailInput(
-            attrs={'required': 'True', 'max_length': 45, 'placeholder': 'E-Mail'}
+            attrs={'required': 'True', 'maxlength': 45, 'placeholder': 'E-Mail'}
         )
     )
 
     telefone = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'max_length': 14, 'pattern': '^[0-9]+$', 'title': 'Apenas números', 'placeholder': 'Telefone (apenas números)'}
+            attrs={'required': 'True', 'maxlength': 14, 'pattern': '^[0-9]+$', 'title': 'Apenas números', 'placeholder': 'Telefone (apenas números)'}
         )
     )
 
     matricula = forms.IntegerField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'max_length': 6, 'pattern': '^[0-9]+$', 'title': 'Apenas números', 'placeholder': 'Matrícula'}
+            attrs={'required': 'True', 'maxlength': 6, 'pattern': '^[0-9]+$', 'title': 'Apenas números', 'placeholder': 'Matrícula'}
         )
     )
 

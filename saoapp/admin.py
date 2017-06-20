@@ -1,9 +1,9 @@
-from django.contrib import admin
-from saoapp.models import *
-
-admin.site.register(TurmaModel)
-admin.site.register(AlunoModel)
-admin.site.register(DisciplinaModel)
-admin.site.register(OcorrenciaModel)
-admin.site.register(ProfessorModel)
+# from django.contrib import admin
+# from saoapp.models import *
+#
+# admin.site.register(TurmaModel)
+# admin.site.register(AlunoModel)
+# admin.site.register(DisciplinaModel)
+# admin.site.register(OcorrenciaModel)
+# admin.site.register(ProfessorModel)
 

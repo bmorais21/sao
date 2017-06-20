@@ -7,7 +7,7 @@ from saoapp.models import AlunoModel, OcorrenciaModel, ProfessorModel, Disciplin
 class OcorrenciaForm(forms.ModelForm):
     descricao = forms.CharField(
         widget=forms.Textarea(
-            attrs={'required': 'True', 'max_length': 150, 'placeholder': 'Descrição'}
+            attrs={'required': 'True', 'maxlength': 150, 'placeholder': 'Descrição'}
         )
     )
 
