@@ -46,7 +46,8 @@ class OcorrenciaEditarView(View):
     def get(self, request, id=None):
         oc = OcorrenciaModel.objects.get(id=id)
         form = OcorrenciaForm(instance=oc)
-        return render(request, 'ocorrencia/cadastrar.html', {'form': form})
+        print oc.hora
+        return render(request, 'ocorrencia/cadastrar.html', {'form': form, 'hora': oc.hora})
 
     @method_decorator(login_required(login_url='/login/'))
     def post(self, request, id=None):

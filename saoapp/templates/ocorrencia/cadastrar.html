@@ -43,11 +43,15 @@
                 </div>
                 <div class="field">
                     <label>Hora</label>
-                    {{ form.hora }}
-                    {% if form.hora.errors %}
-                        <div class="ui red pointing label">
-                            {{ form.hora.errors }}
-                        </div>
+                    {% if form.instance.id %}
+                        <input id="id_hora" name="hora" required="True" type="time" value="{{ hora }}"/>
+                    {% else %}
+                        {{ form.hora }}
+                        {% if form.hora.errors %}
+                            <div class="ui red pointing label">
+                                {{ form.hora.errors }}
+                            </div>
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>
