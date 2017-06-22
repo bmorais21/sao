@@ -6,13 +6,13 @@ from saoapp.models import ProfessorModel
 class ProfessorForm(forms.ModelForm):
     first_name = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'pattern': '^[a-zA-Z\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Nome'}
+            attrs={'required': 'True', 'pattern': '^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Nome'}
         )
     )
 
     last_name = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'pattern': '^[a-zA-Z\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Sobrenome'}
+            attrs={'required': 'True', 'pattern': '^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Sobrenome'}
         )
     )
 

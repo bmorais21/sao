@@ -7,13 +7,13 @@ from saoapp.models import AlunoModel, TurmaModel
 class AlunoForm(forms.ModelForm):
     nome = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'pattern': '^[a-zA-Z\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Nome'}
+            attrs={'required': 'True', 'pattern': '^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Nome'}
         )
     )
 
     sobrenome = forms.CharField(
         widget=forms.TextInput(
-            attrs={'required': 'True', 'pattern': '^[a-zA-Z\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Sobrenome'}
+            attrs={'required': 'True', 'pattern': '^[a-zA-Z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]*$', 'title': 'Apenas letras.', 'maxlength': 45, 'placeholder': 'Sobrenome'}
         )
     )
 
