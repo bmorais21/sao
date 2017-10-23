@@ -1,15 +1,16 @@
 # coding: utf-8
+"""Populate de disciplina"""
+
 import os
+import django
+import saoapp.models.disciplina_model
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sao.settings')
-
-import django
-
 django.setup()
 
-import saoapp.models.disciplinaModel
+def populate_disciplina():
+    """Função de população de disciplina"""
 
-def populate():
     add_disicplina(disciplina="Programação I")
     add_disicplina(disciplina="Programação II")
     add_disicplina(disciplina="POO I")
@@ -19,14 +20,15 @@ def populate():
     add_disicplina(disciplina="Serviço de Redes")
 
 def add_disicplina(disciplina):
-    m = saoapp.models.DisciplinaModel.objects.get_or_create(disciplina=disciplina, ativo=True)[0]
-    m.turma = disciplina
-    m.ativo = True
+    """Função de criação de disciplina"""
 
-    m.save()
-    return m
+    disciplina_model = saoapp.models.DisciplinaModel.objects.get_or_create(disciplina=disciplina, ativo=True)[0]
+    disciplina_model.turma = disciplina
+    disciplina_model.ativo = True
+    disciplina_model.save()
+    return disciplina_model
 
-# Start execution here!
 if __name__ == '__main__':
-    print("Starting disciplina population script...")
-    populate()
+    print "Populando disciplina . . ."
+    populate_disciplina()
+    print "Disciplina populada com sucesso!"

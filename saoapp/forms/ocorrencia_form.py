@@ -1,10 +1,13 @@
 # coding: utf-8
+"""Formulário de ocorrencia"""
 
 from django import forms
 from saoapp.models import AlunoModel, OcorrenciaModel, ProfessorModel, DisciplinaModel
 
 
 class OcorrenciaForm(forms.ModelForm):
+    """Classe de formulário de disciplina"""
+
     descricao = forms.CharField(
         widget=forms.Textarea(
             attrs={'required': 'True', 'maxlength': 150, 'placeholder': 'Descrição'}
@@ -47,5 +50,6 @@ class OcorrenciaForm(forms.ModelForm):
     )
 
     class Meta:
+        """Classe de metadados"""
         model = OcorrenciaModel
         exclude = ('ativo',)

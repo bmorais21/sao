@@ -1,16 +1,16 @@
 # coding: utf-8
+"""Populate de turma"""
+
 import os
+import django
+import saoapp.models.turma_model
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sao.settings')
-
-import django
-
 django.setup()
 
-import saoapp.models.turmaModel
 
-
-def populate():
+def populate_turma():
+    """Função de população de turma"""
 
     add_turma(turma="BSI 1")
     add_turma(turma="BSI 2")
@@ -22,14 +22,14 @@ def populate():
     add_turma(turma="BSI 8")
 
 def add_turma(turma):
-    m = saoapp.models.TurmaModel.objects.get_or_create(turma=turma, ativo=True)[0]
-    m.turma = turma
-    m.ativo = True
+    turma_model = saoapp.models.TurmaModel.objects.get_or_create(turma=turma, ativo=True)[0]
+    turma_model.turma = turma
+    turma_model.ativo = True
 
-    m.save()
-    return m
+    turma_model.save()
+    return turma_model
 
-# Start execution here!
 if __name__ == '__main__':
-    print("Starting turma population script...")
-    populate()
+    print "Populando turma . . ."
+    populate_turma()
+    print "Turma populada com sucesso!"

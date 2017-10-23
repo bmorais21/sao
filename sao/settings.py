@@ -117,6 +117,7 @@ USE_L10N = False
 USE_TZ = True
 
 DATE_FORMAT = 'd/m/Y'
+
 TIME_FORMAT = 'H:i'
 
 # Static files (CSS, JavaScript, Images)

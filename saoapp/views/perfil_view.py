@@ -17,7 +17,7 @@ class PerfilView(View):
         nova_senha = request.POST['nova_senha']
         confirmar_nova_senha = request.POST['confirmar_nova_senha']
         if nova_senha == confirmar_nova_senha:
-            user = User.objects.get(id=request.user.id)
+            user = User.objects.get(aluno_id=request.user.id)
             user.set_password(nova_senha)
             user.save()
             return render(request, 'perfil.html', {'ok': 'ok'})

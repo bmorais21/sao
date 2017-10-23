@@ -1,10 +1,13 @@
 # coding: utf-8
+"""Model de aluno"""
 
 from django.db import models
-from turmaModel import TurmaModel
+from saoapp.models.turma_model import TurmaModel
 
 
 class AlunoModel(models.Model):
+    """Classe de model de aluno"""
+
     matricula = models.BigIntegerField(unique=True)
     nome = models.CharField(max_length=45)
     sobrenome = models.CharField(max_length=45)

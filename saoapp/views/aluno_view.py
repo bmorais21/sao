@@ -1,19 +1,26 @@
 # coding: utf-8
+"""View de aluno"""
+
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
 from django.views.generic.base import View
 
-from saoapp.forms.alunoForm import AlunoForm
-from saoapp.models.alunoModel import AlunoModel
+from saoapp.forms.aluno_form import AlunoForm
+from saoapp.models.aluno_model import AlunoModel
+
 
 class AlunoListarView(View):
+    """Classe de view de listagem de alunos"""
+
     @method_decorator(login_required(login_url='/login/'))
     def get(self, request):
+        """Método GET"""
+
         if request.user.is_superuser:
-            al = AlunoModel.objects.all()
-            paginator = Paginator(al, 5)
+            aluno = AlunoModel.objects.all()
+            paginator = Paginator(aluno, 5)
             page = request.GET.get('page')
             try:
                 dados = paginator.page(page)
@@ -22,60 +29,69 @@ class AlunoListarView(View):
             except EmptyPage:
                 dados = paginator.page(paginator.num_pages)
             return render(request, 'aluno/listar.html', {'dados': dados})
-        else:
-            return redirect('index')
-
+        return redirect('index')
 
 class AlunoCadastrarView(View):
+    """Classe de view de cadastro de aluno"""
+
     @method_decorator(login_required(login_url='/login/'))
     def get(self, request):
+        """Método GET"""
+
         if request.user.is_superuser:
             form = AlunoForm()
             return render(request, 'aluno/cadastrar.html', {'form': form})
-        else:
-            return redirect('index')
+        return redirect('index')
 
     @method_decorator(login_required(login_url='/login/'))
     def post(self, request):
+        """Método POST"""
+
         if request.user.is_superuser:
             form = AlunoForm(request.POST)
             if form.is_valid():
                 form.save()
             return redirect('aluno_listar')
-        else:
-            return redirect('index')
+        return redirect('index')
 
 class AlunoEditarView(View):
-    @method_decorator(login_required(login_url='/login/'))
-    def get(self, request, id=None):
-        if request.user.is_superuser:
-            al = AlunoModel.objects.get(id=id)
-            form = AlunoForm(instance=al)
-            return render(request, 'aluno/cadastrar.html', {'form': form})
-        else:
-            return redirect('index')
+    """Classe de view de edição de aluno"""
 
     @method_decorator(login_required(login_url='/login/'))
-    def post(self, request, id=None):
+    def get(self, request, aluno_id=None):
+        """Método GET"""
+
         if request.user.is_superuser:
-            al = AlunoModel.objects.get(id=id)
-            form = AlunoForm(data=request.POST, instance=al)
+            aluno = AlunoModel.objects.get(id=aluno_id)
+            form = AlunoForm(instance=aluno)
+            return render(request, 'aluno/cadastrar.html', {'form': form})
+        return redirect('index')
+
+    @method_decorator(login_required(login_url='/login/'))
+    def post(self, request, aluno_id=None):
+        """Método POST"""
+
+        if request.user.is_superuser:
+            aluno = AlunoModel.objects.get(id=aluno_id)
+            form = AlunoForm(data=request.POST, instance=aluno)
             if form.is_valid():
                 form.save()
             return redirect('aluno_listar')
-        else:
-            return redirect('index')
+        return redirect('index')
 
 class AlunoOcultarView(View):
+    """Classe de view de ocultação de aluno"""
+
     @method_decorator(login_required(login_url='/login/'))
-    def get(self, request, id=None):
+    def get(self, request, aluno_id=None):
+        """Método GET"""
+
         if request.user.is_superuser:
-            al = AlunoModel.objects.get(id=id)
-            if al.ativo:
-                al.ativo = False
+            aluno = AlunoModel.objects.get(id=aluno_id)
+            if aluno.ativo:
+                aluno.ativo = False
             else:
-                al.ativo = True
-            al.save()
+                aluno.ativo = True
+            aluno.save()
             return redirect('aluno_listar')
-        else:
-            return redirect('index')
+        return redirect('index')
