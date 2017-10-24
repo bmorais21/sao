@@ -30,44 +30,46 @@
             </tr>
             </thead>
             <tbody>
-            {% if dados %}
-                {% for dado in dados %}
-                    <tr>
-                        <td>{{ dado.disciplina }}</td>
-                        <td class="collapsing center aligned">
-                            <a class="cursorPointer" href="{% url 'disciplina_editar' dado.id %}">
-                                <i class="ui write grey large icon"></i>
-                            </a>
-                        </td>
-                        <td class="collapsing center aligned">
-                            <a class="cursorPointer"  href="{% url 'disciplina_ocultar' dado.id %}">
-                                {% if dado.ativo == False %}
-                                    <i class="ui refresh green large icon"></i>
-                                {% else %}
-                                    <i class="ui trash red large icon"></i>
-                                {% endif %}
-                            </a>
-                    </tr>
-                {% endfor %}
-            {% else %}
+
+            {% for dado in object_list %}
+                <tr>
+                    <td>{{ dado.disciplina }}</td>
+                    <td class="collapsing center aligned">
+                        <a class="cursorPointer" href="{% url 'disciplina_editar' dado.id %}">
+                            <i class="ui write grey large icon"></i>
+                        </a>
+                    </td>
+                    <td class="collapsing center aligned">
+                        <a class="cursorPointer"  href="{% url 'disciplina_ocultar' dado.id %}">
+                            {% if dado.ativo == False %}
+                                <i class="ui refresh green large icon"></i>
+                            {% else %}
+                                <i class="ui trash red large icon"></i>
+                            {% endif %}
+                        </a>
+                </tr>
+            {% empty %}
                 <tr>
                     <td>Não há dados cadastrados.</td>
                 </tr>
-            {% endif %}
+            {% endfor %}
+
+
+
 
             </tbody>
             <tfoot>
             <tr>
                 <th colspan="5">
                     <div class="ui right floated pagination secondary menu">
-                        {% if dados.has_previous %}
-                            <a href="?page={{ dados.previous_page_number }}" class="icon item">
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}" class="icon item">
                                 <i class="left chevron icon"></i>
                             </a>
                         {% endif %}
-                        <a class="item">Página {{ dados.number }} de {{ dados.paginator.num_pages }}</a>
-                        {% if dados.has_next %}
-                            <a href="?page={{ dados.next_page_number }}" class="icon item">
+                        <a class="item">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</a>
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" class="icon item">
                                 <i class="right chevron icon"></i>
                             </a>
                         {% endif %}
