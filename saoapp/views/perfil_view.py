@@ -13,7 +13,7 @@ from django.views.generic.base import View
 class PerfilView(View):
     @method_decorator(login_required(login_url='/login/'))
     def get(self, request):
-        return render(request, 'perfil.html')
+        return render(request, 'usuario/trocar_senha.html')
 
     @method_decorator(login_required(login_url='/login/'))
     def post(self, request):
@@ -23,6 +23,6 @@ class PerfilView(View):
             user = User.objects.get(aluno_id=request.user.id)
             user.set_password(nova_senha)
             user.save()
-            return render(request, 'perfil.html', {'ok': 'ok'})
+            return render(request, 'usuario/trocar_senha.html', {'ok': 'ok'})
         else:
-            return render(request, 'perfil.html', {'erro': 'erro'})
+            return render(request, 'usuario/trocar_senha.html', {'erro': 'erro'})
