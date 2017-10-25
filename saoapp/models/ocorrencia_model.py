@@ -1,6 +1,7 @@
 # coding: utf-8
 """Model de ocorrência"""
 
+from __future__ import unicode_literals
 from django.db import models
 from saoapp.models import ProfessorModel, AlunoModel, DisciplinaModel
 

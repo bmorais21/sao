@@ -1,6 +1,7 @@
 # coding: utf-8
 """Formulário de aluno"""
 
+from __future__ import unicode_literals
 from django import forms
 from saoapp.models import AlunoModel, TurmaModel
 

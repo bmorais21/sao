@@ -1,4 +1,6 @@
 # coding: utf-8
+
+from __future__ import unicode_literals
 import user
 
 from django.contrib.auth.decorators import login_required
@@ -6,6 +8,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.generic.base import View
+
 
 class PerfilView(View):
     @method_decorator(login_required(login_url='/login/'))

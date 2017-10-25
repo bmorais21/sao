@@ -1,7 +1,9 @@
 # coding: utf-8
 """Model de professor"""
 
+from __future__ import unicode_literals
 from django.contrib.auth.models import User
+
 
 class ProfessorModel(User):
     """Classe de model de professor"""

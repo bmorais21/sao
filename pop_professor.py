@@ -1,6 +1,7 @@
 # coding: utf-8
 """Populate de professor"""
 
+from __future__ import unicode_literals
 import os
 import django
 import saoapp.models.professor_model
@@ -20,6 +21,7 @@ def populate_professor():
     add_professor(first_name="Eduardo", last_name="Silva", email="eduardo@email.com",
                   username="eduardo", password="eduardo")
 
+
 def add_professor(first_name, last_name, email, username, password):
     """Função de criação de professor"""
 
@@ -36,7 +38,8 @@ def add_professor(first_name, last_name, email, username, password):
     professor_model.save()
     return professor_model
 
+
 if __name__ == '__main__':
-    print "Populando professor . . ."
+    print("Populando professor . . .")
     populate_professor()
-    print "Professor populado com sucesso!"
+    print("Professor populado com sucesso!")

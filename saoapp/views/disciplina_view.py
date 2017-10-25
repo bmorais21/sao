@@ -1,6 +1,7 @@
 # coding: utf-8
 """View de disciplina"""
 
+from __future__ import unicode_literals
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
@@ -9,6 +10,7 @@ from django.views.generic import ListView
 
 from saoapp.forms.disciplina_form import DisciplinaForm
 from saoapp.models import DisciplinaModel
+
 
 class DisciplinaListarView(ListView):
     """Classe genérica de view de listagem de disciplinas"""

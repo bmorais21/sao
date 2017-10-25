@@ -1,6 +1,7 @@
 # coding: utf-8
 """View de turma"""
 
+from __future__ import unicode_literals
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect
@@ -8,6 +9,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic.base import View
 from saoapp.forms.turma_form import TurmaForm
 from saoapp.models.turma_model import TurmaModel
+
 
 class TurmaListarView(View):
     """Classe de view de listagem de turmas"""

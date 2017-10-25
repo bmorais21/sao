@@ -1,6 +1,7 @@
 # coding: utf-8
 """Populate de disciplina"""
 
+from __future__ import unicode_literals
 import os
 import django
 import saoapp.models.disciplina_model
@@ -19,6 +20,7 @@ def populate_disciplina():
     add_disicplina(disciplina="Redes II")
     add_disicplina(disciplina="Serviço de Redes")
 
+
 def add_disicplina(disciplina):
     """Função de criação de disciplina"""
 
@@ -28,7 +30,8 @@ def add_disicplina(disciplina):
     disciplina_model.save()
     return disciplina_model
 
+
 if __name__ == '__main__':
-    print "Populando disciplina . . ."
+    print("Populando disciplina . . .")
     populate_disciplina()
-    print "Disciplina populada com sucesso!"
+    print("Disciplina populada com sucesso!")

@@ -1,6 +1,7 @@
 # coding: utf-8
 """Populate de turma"""
 
+from __future__ import unicode_literals
 import os
 import django
 import saoapp.models.turma_model
@@ -21,6 +22,7 @@ def populate_turma():
     add_turma(turma="BSI 7")
     add_turma(turma="BSI 8")
 
+
 def add_turma(turma):
     turma_model = saoapp.models.TurmaModel.objects.get_or_create(turma=turma, ativo=True)[0]
     turma_model.turma = turma
@@ -29,7 +31,8 @@ def add_turma(turma):
     turma_model.save()
     return turma_model
 
+
 if __name__ == '__main__':
-    print "Populando turma . . ."
+    print("Populando turma . . .")
     populate_turma()
-    print "Turma populada com sucesso!"
+    print("Turma populada com sucesso!")

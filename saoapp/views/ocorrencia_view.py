@@ -1,6 +1,7 @@
 # coding: utf-8
 """View de ocorrência"""
 
+from __future__ import unicode_literals
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import PageNotAnInteger, EmptyPage
 from django.core.paginator import Paginator
@@ -10,6 +11,7 @@ from django.views.generic.base import View
 
 from saoapp.forms.ocorrencia_form import OcorrenciaForm
 from saoapp.models import OcorrenciaModel
+
 
 class OcorrenciaListarView(View):
     """Classe de view de listagem de ocorrências"""
