@@ -1,0 +1,21 @@
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+{% for language in languages %}
+
+    {% if language.name_local == 'English' %}
+        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}" />
+            <input id="language_selector" name="language" type="hidden" value="{{ language.code }}"/>
+            <button type="submit"><i class="us flag"></i></button>
+        </form>
+    {% else %}
+        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}" />
+            <input id="language_selector" name="language" type="hidden" value="{{ language.code }}"/>
+            <button type="submit" class="ui borderless"><i class="br flag"></i></button>
+        </form>
+    {% endif %}
+{% endfor %}

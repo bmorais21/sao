@@ -1,5 +1,7 @@
 {% extends 'include/base.html' %}
 
+{% load i18n %}
+
 {% block 'conteudo' %}
 
     <article class="twelve wide column">
@@ -7,7 +9,7 @@
         <div class="row">
             <nav class="ui text stackable menu">
                 <h2 class="ui header">
-                    Ocorrências
+                    {% blocktrans %}Ocorrências{% endblocktrans %}
                 </h2>
             </nav>
         </div>
@@ -16,23 +18,23 @@
             <thead>
             <tr>
                 <th class="no-sort" colspan="7">
-                    <div class="ui black ribbon large label lista">Lista de Ocorrências</div>
+                    <div class="ui black ribbon large label lista">{% blocktrans %}Lista de Ocorrências{% endblocktrans %}</div>
                     <a href="{% url 'ocorrencia_cadastrar' %}" class="right floated ui labeled green icon button">
                         <i class="icon add"></i>
-                        Adicionar Nova Ocorrência
+                        {% blocktrans %}Adicionar Nova Ocorrência{% endblocktrans %}
                     </a>
                 </th>
 
             </tr>
             <tr>
-                <th>Aluno</th>
-                <th>Turma</th>
-                <th>Disciplina</th>
-                <th>Data</th>
+                <th>{% blocktrans %}Aluno{% endblocktrans %}</th>
+                <th>{% blocktrans %}Turma{% endblocktrans %}</th>
+                <th>{% blocktrans %}Disciplina{% endblocktrans %}</th>
+                <th>{% blocktrans %}Data{% endblocktrans %}</th>
                 {% if user.is_superuser %}
-                <th class="collapsing center aligned" colspan="3">Ações</th>
+                <th class="collapsing center aligned" colspan="3">{% blocktrans %}Ações{% endblocktrans %}</th>
                 {% else %}
-                <th class="collapsing center aligned" colspan="2">Ações</th>
+                <th class="collapsing center aligned" colspan="2">{% blocktrans %}Ações{% endblocktrans %}</th>
                 {% endif %}
             </tr>
             </thead>
@@ -69,7 +71,7 @@
                 {% endfor %}
             {% else %}
                 <tr>
-                    <td>Não há dados cadastrados.</td>
+                    <td>{% blocktrans %}Não há dados cadastrados.{% endblocktrans %}</td>
                 </tr>
             {% endif %}
 
@@ -83,7 +85,7 @@
                                 <i class="left chevron icon"></i>
                             </a>
                         {% endif %}
-                        <a class="item">Página {{ dados.number }} de {{ dados.paginator.num_pages }}</a>
+                        <a class="item">{% blocktrans %}Página{% endblocktrans %} {{ dados.number }} {% blocktrans %}de{% endblocktrans %} {{ dados.paginator.num_pages }}</a>
                         {% if dados.has_next %}
                             <a href="?page={{ dados.next_page_number }}" class="icon item">
                                 <i class="right chevron icon"></i>

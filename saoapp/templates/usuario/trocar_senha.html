@@ -1,26 +1,28 @@
 {% extends 'include/base.html' %}
 
+{% load i18n %}
+
 {% block 'conteudo' %}
 <div class="three wide column"></div>
     <article class="six wide column">
 
         <nav class="ui text stackable menu">
-            <h2 class="ui header">Troca de Senha</h2>
+            <h2 class="ui header">{% blocktrans %}Troca de Senha{% endblocktrans %}</h2>
         </nav>
 
         <form method="POST" action="{% url 'perfil' %}" class="ui content form">
 
             {% if erro %}
                 <div class="ui negative message">
-                    <div class="header">Senha incorreta!</div>
-                    <p>Por favor, verifique os dados e tente novamente.</p>
+                    <div class="header">{% blocktrans %}Senha incorreta!{% endblocktrans %}</div>
+                    <p>{% blocktrans %}Por favor, verifique os dados e tente novamente.{% endblocktrans %}</p>
                 </div>
             {% endif %}
 
             {% if ok %}
                 <div class="ui positve message">
-                    <div class="header">Senha alterada!</div>
-                    <p>Por favor, faça login novamente.</p>
+                    <div class="header">{% blocktrans %}Senha alterada!{% endblocktrans %}</div>
+                    <p>{% blocktrans %}Por favor, faça login novamente.{% endblocktrans %}</p>
                     <meta http-equiv="refresh" content="2; url=/"/>
                 </div>
             {% endif %}
@@ -28,16 +30,16 @@
             {% csrf_token %}
 
             <div class="field">
-                <label>Nova Senha</label>
+                <label>{% blocktrans %}Nova Senha{% endblocktrans %}</label>
                 <input type="password" required="True" name="nova_senha"/>
             </div>
 
             <div class="field">
-                <label>Confirme a Nova Senha</label>
+                <label>{% blocktrans %}Confirme a Nova Senha{% endblocktrans %}</label>
                 <input type="password" required="True" name="confirmar_nova_senha"/>
             </div>
             <div class="actions">
-                <input type="submit" class="ui right green button" value="Trocar Senha"/>
+                <input type="submit" class="ui right green button" value="{% blocktrans %}Trocar Senha{% endblocktrans %}"/>
             </div>
 
         </form>

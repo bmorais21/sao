@@ -1,5 +1,7 @@
 {% extends 'include/base.html' %}
 
+{% load i18n %}
+
 {% block 'conteudo' %}
     <article class="twelve wide column">
         {% if form.instance.id %}
@@ -8,32 +10,32 @@
             <form class="ui form" method="POST" action="{% url 'ocorrencia_cadastrar' %}">
         {% endif %}
             {% csrf_token %}
-            <h1 class="ui dividing header">Cadastro de Ocorrência</h1>
+            <h1 class="ui dividing header">{% blocktrans %}Cadastro de Ocorrência{% endblocktrans %}</h1>
             {% if user.is_superuser %}
             <div class="three fields">
             {% else %}
             <div class="two fields">
             {% endif %}
                 <div class="field">
-                    <label>Aluno</label>
+                    <label>{% blocktrans %}Aluno{% endblocktrans %}</label>
                     {{ form.aluno }}
                 </div>
                 {% if user.is_superuser %}
                 <div class="field">
-                    <label>Professor</label>
+                    <label>{% blocktrans %}Professor{% endblocktrans %}</label>
                     {{ form.professor }}
                 </div>
                 {% else %}
                     <input type="hidden" name="professor" id="id_professor" value="{{ user.id }}"/>
                 {% endif %}
                 <div class="field">
-                    <label>Disciplina</label>
+                    <label>{% blocktrans %}Disciplina{% endblocktrans %}</label>
                     {{ form.disciplina }}
                 </div>
             </div>
             <div class="two fields">
                 <div class="field">
-                    <label>Data</label>
+                    <label>{% blocktrans %}Data{% endblocktrans %}</label>
                     {{ form.data }}
                     {% if form.data.errors %}
                         <div class="ui red pointing label">
@@ -42,7 +44,7 @@
                     {% endif %}
                 </div>
                 <div class="field">
-                    <label>Hora</label>
+                    <label>{% blocktrans %}Hora{% endblocktrans %}</label>
                     {% if form.instance.id %}
                         <input id="id_hora" name="hora" required="True" type="time" value="{{ hora }}"/>
                     {% else %}
@@ -56,7 +58,7 @@
                 </div>
             </div>
             <div class="field">
-                <label>Descrição</label>
+                <label>{% blocktrans %}Descrição{% endblocktrans %}</label>
                 {{ form.descricao }}
                 {% if form.descricao.errors %}
                     <div class="ui red pointing label">
@@ -65,8 +67,8 @@
                 {% endif %}
             </div>
             <div class="actions">
-                <a href="{% url 'ocorrencia_listar' %}" class="ui deny button">Cancelar</a>
-                <input type="submit" class="ui right green button" value="Cadastrar"/>
+                <a href="{% url 'ocorrencia_listar' %}" class="ui deny button">{% blocktrans %}Cancelar{% endblocktrans %}</a>
+                <input type="submit" class="ui right green button" value="{% blocktrans %}Cadastrar{% endblocktrans %}"/>
             </div>
         </form>
     </article>

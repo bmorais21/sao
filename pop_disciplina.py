@@ -9,6 +9,8 @@ import saoapp.models.disciplina_model
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sao.settings')
 django.setup()
 
+#TODO: arrumar pouplates
+
 def populate_disciplina():
     """Função de população de disciplina"""
 

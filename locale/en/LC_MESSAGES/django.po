@@ -1,0 +1,341 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-26 16:30-0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: sao/settings.py:16
+msgid "Brazilian (Portuguese)"
+msgstr ""
+
+#: sao/settings.py:17
+msgid "English"
+msgstr ""
+
+#: saoapp/templates/aluno/cadastrar.html:13
+msgid "Cadastro de Aluno"
+msgstr "Student Registration"
+
+#: saoapp/templates/aluno/cadastrar.html:16
+#: saoapp/templates/aluno/listar.html:30
+#: saoapp/templates/professor/cadastrar.html:16
+#: saoapp/templates/professor/listar.html:30
+msgid "Nome"
+msgstr "First Name"
+
+#: saoapp/templates/aluno/cadastrar.html:20
+#: saoapp/templates/professor/cadastrar.html:20
+msgid "Sobrenome"
+msgstr "Last Name"
+
+#: saoapp/templates/aluno/cadastrar.html:24
+msgid "Matrícula"
+msgstr "Registration"
+
+#: saoapp/templates/aluno/cadastrar.html:30
+msgid "Telefone"
+msgstr "Telephone"
+
+#: saoapp/templates/aluno/cadastrar.html:34
+#: saoapp/templates/professor/cadastrar.html:24
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: saoapp/templates/aluno/cadastrar.html:38
+#: saoapp/templates/aluno/listar.html:31
+#: saoapp/templates/ocorrencia/listar.html:31
+#: saoapp/templates/ocorrencia/relatorio.html:23
+#: saoapp/templates/turma/cadastrar.html:15
+#: saoapp/templates/turma/listar.html:30
+msgid "Turma"
+msgstr "Class"
+
+#: saoapp/templates/aluno/cadastrar.html:43
+#: saoapp/templates/disciplina/cadastrar.html:19
+#: saoapp/templates/ocorrencia/cadastrar.html:70
+#: saoapp/templates/professor/cadastrar.html:39
+#: saoapp/templates/turma/cadastrar.html:19
+msgid "Cancelar"
+msgstr "Cancel"
+
+#: saoapp/templates/aluno/cadastrar.html:44
+#: saoapp/templates/disciplina/cadastrar.html:20
+#: saoapp/templates/ocorrencia/cadastrar.html:71
+#: saoapp/templates/professor/cadastrar.html:40
+#: saoapp/templates/turma/cadastrar.html:20
+msgid "Cadastrar"
+msgstr "Register"
+
+#: saoapp/templates/aluno/listar.html:12
+#: saoapp/templates/include/menu_superior.html:10
+msgid "Alunos"
+msgstr "Students"
+
+#: saoapp/templates/aluno/listar.html:21
+msgid "Lista de Alunos"
+msgstr "List of Students"
+
+#: saoapp/templates/aluno/listar.html:24
+msgid "Adicionar Novo Aluno"
+msgstr "Register New Student"
+
+#: saoapp/templates/aluno/listar.html:32
+#: saoapp/templates/disciplina/listar.html:31
+#: saoapp/templates/ocorrencia/listar.html:35
+#: saoapp/templates/ocorrencia/listar.html:37
+#: saoapp/templates/professor/listar.html:31
+#: saoapp/templates/turma/listar.html:31
+msgid "Ações"
+msgstr "Actions"
+
+#: saoapp/templates/aluno/listar.html:58
+#: saoapp/templates/disciplina/listar.html:55
+#: saoapp/templates/ocorrencia/listar.html:74
+#: saoapp/templates/professor/listar.html:56
+#: saoapp/templates/turma/listar.html:56
+msgid "Não há dados cadastrados."
+msgstr "No data is registered."
+
+#: saoapp/templates/aluno/listar.html:72
+#: saoapp/templates/disciplina/listar.html:72
+#: saoapp/templates/ocorrencia/listar.html:88
+#: saoapp/templates/professor/listar.html:70
+#: saoapp/templates/turma/listar.html:70
+msgid "Página"
+msgstr "Page"
+
+#: saoapp/templates/aluno/listar.html:72
+#: saoapp/templates/disciplina/listar.html:72
+#: saoapp/templates/ocorrencia/listar.html:88
+#: saoapp/templates/professor/listar.html:70
+#: saoapp/templates/turma/listar.html:70
+msgid "de"
+msgstr "of"
+
+#: saoapp/templates/disciplina/cadastrar.html:13
+msgid "Cadastro de Disciplina"
+msgstr "Subject Registration"
+
+#: saoapp/templates/disciplina/cadastrar.html:15
+#: saoapp/templates/disciplina/listar.html:30
+#: saoapp/templates/ocorrencia/cadastrar.html:32
+#: saoapp/templates/ocorrencia/listar.html:32
+#: saoapp/templates/ocorrencia/relatorio.html:19
+msgid "Disciplina"
+msgstr "Subject"
+
+#: saoapp/templates/disciplina/listar.html:21
+msgid "Lista de Disciplinas"
+msgstr "List of Subjects"
+
+#: saoapp/templates/disciplina/listar.html:24
+msgid "Adicionar Nova Disciplina"
+msgstr "Register New Subject"
+
+#: saoapp/templates/include/base.html:7
+msgid "SAO - Sistema de Acompanhamento de Ocorrências"
+msgstr "Welcome to Occurence Tracking System (SAO)"
+
+#: saoapp/templates/include/base.html:23
+msgid "Desenvolvido por Bruno Miguel Morais"
+msgstr "Developed by Bruno Miguel Morais"
+
+#: saoapp/templates/include/menu_superior.html:9
+#: saoapp/templates/include/menu_superior.html:15
+#: saoapp/templates/ocorrencia/listar.html:12
+msgid "Ocorrências"
+msgstr "Occurences"
+
+#: saoapp/templates/include/menu_superior.html:11
+msgid "Turmas"
+msgstr "Classes"
+
+#: saoapp/templates/include/menu_superior.html:12
+msgid "Disciplinas"
+msgstr "Subjects"
+
+#: saoapp/templates/include/menu_superior.html:13
+#: saoapp/templates/professor/listar.html:12
+msgid "Professores"
+msgstr "Teachers"
+
+#: saoapp/templates/include/menu_superior.html:19
+#: saoapp/templates/usuario/trocar_senha.html:42
+msgid "Trocar Senha"
+msgstr "Change Password"
+
+#: saoapp/templates/include/menu_superior.html:20
+msgid "Sair"
+msgstr "Exit"
+
+#: saoapp/templates/index.html:7
+msgid "Seja Bem-Vindo"
+msgstr "Hi there!"
+
+#: saoapp/templates/index.html:8
+msgid "Bem-Vindo ao Sistema de Acompanhamento de Ocorrências (SAO) "
+msgstr "Welcome to Occurence Tracking System (SAO)"
+
+#: saoapp/templates/index.html:9
+msgid ""
+"Este sistema foi desenvolvido para a disciplina de Desenvolvimento Web I & "
+"II, pelo aluno\n"
+"        Bruno Miguel Morais."
+msgstr ""
+"This system was developed for the discipline of Web Devlopement I & II, by "
+"Bruno Miguel Morais"
+
+#: saoapp/templates/index.html:11
+msgid "Para uma experiência completa, utilize o navegador Google Chrome."
+msgstr "For a complete experience, please use Google Chrome browser."
+
+#: saoapp/templates/ocorrencia/cadastrar.html:13
+msgid "Cadastro de Ocorrência"
+msgstr "Occurrence Registration"
+
+#: saoapp/templates/ocorrencia/cadastrar.html:20
+#: saoapp/templates/ocorrencia/listar.html:30
+#: saoapp/templates/ocorrencia/relatorio.html:11
+msgid "Aluno"
+msgstr "Student"
+
+#: saoapp/templates/ocorrencia/cadastrar.html:25
+#: saoapp/templates/ocorrencia/relatorio.html:15
+msgid "Professor"
+msgstr "Teacher"
+
+#: saoapp/templates/ocorrencia/cadastrar.html:38
+#: saoapp/templates/ocorrencia/listar.html:33
+#: saoapp/templates/ocorrencia/relatorio.html:29
+msgid "Data"
+msgstr "Date"
+
+#: saoapp/templates/ocorrencia/cadastrar.html:47
+#: saoapp/templates/ocorrencia/relatorio.html:33
+msgid "Hora"
+msgstr "Hour"
+
+#: saoapp/templates/ocorrencia/cadastrar.html:61
+#: saoapp/templates/ocorrencia/relatorio.html:38
+msgid "Descrição"
+msgstr "Description"
+
+#: saoapp/templates/ocorrencia/listar.html:21
+msgid "Lista de Ocorrências"
+msgstr "List of Occurences"
+
+#: saoapp/templates/ocorrencia/listar.html:24
+msgid "Adicionar Nova Ocorrência"
+msgstr "Register New Occurrence"
+
+#: saoapp/templates/ocorrencia/relatorio.html:7
+msgid "Relatório da Ocorrência"
+msgstr "Occurrence Report"
+
+#: saoapp/templates/ocorrencia/relatorio.html:42
+msgid "Voltar"
+msgstr "Back"
+
+#: saoapp/templates/professor/cadastrar.html:13
+msgid "Cadastro de Professor"
+msgstr "Teacher Registration"
+
+#: saoapp/templates/professor/cadastrar.html:30
+msgid "Nome de Usuário"
+msgstr "Username"
+
+#: saoapp/templates/professor/cadastrar.html:34
+#: saoapp/templates/usuario/login.html:33
+msgid "Senha"
+msgstr "Password"
+
+#: saoapp/templates/professor/listar.html:21
+msgid "Lista de Professores"
+msgstr "List of Teachers"
+
+#: saoapp/templates/professor/listar.html:24
+msgid "Adicionar Novo Professor"
+msgstr "Register New Teacher"
+
+#: saoapp/templates/turma/cadastrar.html:13
+msgid "Cadastro de Turma"
+msgstr "Class Registration"
+
+#: saoapp/templates/turma/listar.html:21
+msgid "Lista de Turmas"
+msgstr "List of Classes"
+
+#: saoapp/templates/turma/listar.html:24
+msgid "Adicionar Nova Turma"
+msgstr "Register New Class"
+
+#: saoapp/templates/usuario/login.html:13
+#: saoapp/templates/usuario/login.html:38
+msgid "Entrar"
+msgstr "Sign in"
+
+#: saoapp/templates/usuario/login.html:20
+msgid "Usuário ou Senha incorretos!"
+msgstr "Username or password wrong!"
+
+#: saoapp/templates/usuario/login.html:21
+#: saoapp/templates/usuario/trocar_senha.html:18
+msgid "Por favor, verifique os dados e tente novamente."
+msgstr "Please, check the data and try again."
+
+#: saoapp/templates/usuario/login.html:28
+msgid "Usuário"
+msgstr "Username"
+
+#: saoapp/templates/usuario/logout.html:11
+msgid "Você saiu!"
+msgstr "You logout!"
+
+#: saoapp/templates/usuario/logout.html:12
+msgid "Você será redirecionado para tela de entrada em instantes."
+msgstr "You will be redirected to the main screen in a moment."
+
+#: saoapp/templates/usuario/trocar_senha.html:10
+msgid "Troca de Senha"
+msgstr "Change Password"
+
+#: saoapp/templates/usuario/trocar_senha.html:17
+msgid "Senha incorreta!"
+msgstr "Wrong password!"
+
+#: saoapp/templates/usuario/trocar_senha.html:24
+msgid "Senha alterada!"
+msgstr "Password changed!"
+
+#: saoapp/templates/usuario/trocar_senha.html:25
+msgid "Por favor, faça login novamente."
+msgstr "Please, do your login again."
+
+#: saoapp/templates/usuario/trocar_senha.html:33
+msgid "Nova Senha"
+msgstr "Change Password"
+
+#: saoapp/templates/usuario/trocar_senha.html:38
+msgid "Confirme a Nova Senha"
+msgstr "Confirm the new password"
+
+#~ msgid "Página %(dados.number)s de %(dados.paginator.num_pages)s"
+#~ msgstr "Page %(dados.number)s of %(dados.paginator.num_pages)s"
+
+#, fuzzy
+#~| msgid "Página %(dados.number)s de %(dados.paginator.num_pages)s"
+#~ msgid "Página %(page_obj.number)s de %(page_obj.paginator.num_pages)s"
+#~ msgstr "Page %(dados.number)s of %(dados.paginator.num_pages)s"

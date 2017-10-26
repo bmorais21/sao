@@ -1,5 +1,7 @@
 {% extends 'include/base.html' %}
 
+{% load i18n %}
+
 {% block 'conteudo' %}
     <article class="twelve wide column">
     {% if form.instance.id %}
@@ -8,14 +10,14 @@
         <form class="ui form" method="POST" action="{% url 'disciplina_cadastrar' %}">
     {% endif %}
             {% csrf_token %}
-            <h1 class="ui dividing header">Cadastro de Disciplina</h1>
+            <h1 class="ui dividing header">{% blocktrans %}Cadastro de Disciplina{% endblocktrans %}</h1>
                 <div class="field">
-                    <label>Disciplina</label>
+                    <label>{% blocktrans %}Disciplina{% endblocktrans %}</label>
                     {{ form.disciplina }}
                 </div>
             <div class="actions">
-                <a href="{% url 'disciplina_listar' %}" class="ui deny button">Cancelar</a>
-                <input type="submit" class="ui right green button" value="Cadastrar"/>
+                <a href="{% url 'disciplina_listar' %}" class="ui deny button">{% blocktrans %}Cancelar{% endblocktrans %}</a>
+                <input type="submit" class="ui right green button" value="{% blocktrans %}Cadastrar{% endblocktrans %}"/>
             </div>
         </form>
     </article>

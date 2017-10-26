@@ -1,5 +1,7 @@
 {% extends 'include/base.html' %}
 
+{% load i18n %}
+
 {% block 'conteudo' %}
 
     <article class="twelve wide column">
@@ -16,17 +18,17 @@
             <thead>
             <tr>
                 <th class="no-sort" colspan="5">
-                    <div class="ui black ribbon large label lista">Lista de Turmas</div>
+                    <div class="ui black ribbon large label lista">{% blocktrans %}Lista de Turmas{% endblocktrans %}</div>
                     <a href="{% url 'turma_cadastrar' %}" class="right floated ui labeled green icon button">
                         <i class="icon add"></i>
-                        Adicionar Nova Turma
+                        {% blocktrans %}Adicionar Nova Turma{% endblocktrans %}
                     </a>
                 </th>
 
             </tr>
             <tr>
-                <th>Turma</th>
-                <th class="collapsing center aligned" colspan="2">Ações</th>
+                <th>{% blocktrans %}Turma{% endblocktrans %}</th>
+                <th class="collapsing center aligned" colspan="2">{% blocktrans %}Ações{% endblocktrans %}</th>
             </tr>
             </thead>
             <tbody>
@@ -51,7 +53,7 @@
                 {% endfor %}
             {% else %}
                 <tr>
-                    <td>Não há dados cadastrados.</td>
+                    <td>{% blocktrans %}Não há dados cadastrados.{% endblocktrans %}</td>
                 </tr>
             {% endif %}
 
@@ -65,7 +67,7 @@
                                 <i class="left chevron icon"></i>
                             </a>
                         {% endif %}
-                        <a class="item">Página {{ dados.number }} de {{ dados.paginator.num_pages }}</a>
+                        <a class="item">{% blocktrans %}Página{% endblocktrans %} {{ dados.number }} {% blocktrans %}de{% endblocktrans %} {{ dados.paginator.num_pages }}</a>
                         {% if dados.has_next %}
                             <a href="?page={{ dados.next_page_number }}" class="icon item">
                                 <i class="right chevron icon"></i>

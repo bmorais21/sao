@@ -1,43 +1,45 @@
 {% extends 'include/base.html' %}
 
+{% load i18n %}
+
 {% block 'conteudo' %}
     <article class="twelve wide column">
-        <h1 class="ui dividing header">Relatório da Ocorrência</h1>
+        <h1 class="ui dividing header">{% blocktrans %}Relatório da Ocorrência{% endblocktrans %}</h1>
         <div class="ui form">
             <div class="four fields">
                 <div class="field">
-                    <label>Aluno</label>
+                    <label>{% blocktrans %}Aluno{% endblocktrans %}</label>
                     {{ dado.aluno }}
                 </div>
                 <div class="field">
-                    <label>Professor</label>
+                    <label>{% blocktrans %}Professor{% endblocktrans %}</label>
                     {{ dado.professor }}
                 </div>
                 <div class="field">
-                    <label>Disciplina</label>
+                    <label>{% blocktrans %}Disciplina{% endblocktrans %}</label>
                     {{ dado.disciplina }}
                 </div>
                 <div class="field">
-                    <label>Turma</label>
+                    <label>{% blocktrans %}Turma{% endblocktrans %}</label>
                     {{ dado.aluno.turma }}
                 </div>
             </div>
             <div class="two fields">
                 <div class="field">
-                    <label>Data</label>
+                    <label>{% blocktrans %}Data{% endblocktrans %}</label>
                     {{ dado.data }}
                 </div>
                 <div class="field">
-                    <label>Hora</label>
+                    <label>{% blocktrans %}Hora{% endblocktrans %}</label>
                     {{ dado.hora }}
                 </div>
             </div>
             <div class="field">
-                <label>Descrição</label>
+                <label>{% blocktrans %}Descrição{% endblocktrans %}</label>
                 {{ dado.descricao }}
             </div>
             <div class="actions">
-                <a href="{% url 'ocorrencia_listar' %}" class="ui deny button">Voltar</a>
+                <a href="{% url 'ocorrencia_listar' %}" class="ui deny button">{% blocktrans %}Voltar{% endblocktrans %}</a>
             </div>
         </div>
     </article>

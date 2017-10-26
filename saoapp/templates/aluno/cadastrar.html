@@ -1,5 +1,7 @@
 {% extends 'include/base.html' %}
 
+{% load i18n %}
+
 {% block 'conteudo' %}
     <article class="twelve wide column">
     {% if form.instance.id %}
@@ -8,38 +10,38 @@
         <form class="ui form" method="POST" action="{% url 'aluno_cadastrar' %}">
     {% endif %}
             {% csrf_token %}
-            <h1 class="ui dividing header">Cadastro de Aluno</h1>
+            <h1 class="ui dividing header">{% blocktrans %}Cadastro de Aluno{% endblocktrans %}</h1>
             <div class="three fields">
                 <div class="field">
-                    <label>Nome</label>
+                    <label>{% blocktrans %}Nome{% endblocktrans %}</label>
                     {{ form.nome }}
                 </div>
                 <div class="field">
-                    <label>Sobrenome</label>
+                    <label>{% blocktrans %}Sobrenome{% endblocktrans %}</label>
                     {{ form.sobrenome }}
                 </div>
                 <div class="field">
-                    <label>Matrícula</label>
+                    <label>{% blocktrans %}Matrícula{% endblocktrans %}</label>
                     {{ form.matricula }}
                 </div>
             </div>
             <div class="three fields">
                 <div class="field">
-                    <label>Telefone</label>
+                    <label>{% blocktrans %}Telefone{% endblocktrans %}</label>
                     {{ form.telefone }}
                 </div>
                 <div class="field">
-                    <label>E-Mail</label>
+                    <label>{% blocktrans %}E-Mail{% endblocktrans %}</label>
                     {{ form.email }}
                 </div>
                 <div class="field">
-                    <label>Turma</label>
+                    <label>{% blocktrans %}Turma{% endblocktrans %}</label>
                     {{ form.turma }}
                 </div>
             </div>
             <div class="actions">
-                <a href="{% url 'aluno_listar' %}" class="ui deny button">Cancelar</a>
-                <input type="submit" class="ui right green button" value="Cadastrar"/>
+                <a href="{% url 'aluno_listar' %}" class="ui deny button">{% blocktrans %}Cancelar{% endblocktrans %}</a>
+                <input type="submit" class="ui right green button" value="{% blocktrans %}Cadastrar{% endblocktrans %}"/>
             </div>
         </form>
     </article>

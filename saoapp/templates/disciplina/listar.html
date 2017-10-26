@@ -1,5 +1,7 @@
 {% extends 'include/base.html' %}
 
+{% load i18n %}
+
 {% block 'conteudo' %}
 
     <article class="twelve wide column">
@@ -16,17 +18,17 @@
             <thead>
             <tr>
                 <th class="no-sort" colspan="5">
-                    <div class="ui black ribbon large label lista">Lista de Disciplinas</div>
+                    <div class="ui black ribbon large label lista">{% blocktrans %}Lista de Disciplinas{% endblocktrans %}</div>
                     <a href="{% url 'disciplina_cadastrar' %}" class="right floated ui labeled green icon button">
                         <i class="icon add"></i>
-                        Adicionar Nova Disciplina
+                        {% blocktrans %}Adicionar Nova Disciplina{% endblocktrans %}
                     </a>
                 </th>
 
             </tr>
             <tr>
-                <th>Disciplina</th>
-                <th class="collapsing center aligned" colspan="2">Ações</th>
+                <th>{% blocktrans %}Disciplina{% endblocktrans %}</th>
+                <th class="collapsing center aligned" colspan="2">{% blocktrans %}Ações{% endblocktrans %}</th>
             </tr>
             </thead>
             <tbody>
@@ -50,7 +52,7 @@
                 </tr>
             {% empty %}
                 <tr>
-                    <td>Não há dados cadastrados.</td>
+                    <td>{% blocktrans %}Não há dados cadastrados.{% endblocktrans %}</td>
                 </tr>
             {% endfor %}
 
@@ -67,7 +69,7 @@
                                 <i class="left chevron icon"></i>
                             </a>
                         {% endif %}
-                        <a class="item">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</a>
+                        <a class="item">{% blocktrans %}Página{% endblocktrans %} {{ page_obj.number }} {% blocktrans %}de{% endblocktrans %} {{ page_obj.paginator.num_pages }}</a>
                         {% if page_obj.has_next %}
                             <a href="?page={{ page_obj.next_page_number }}" class="icon item">
                                 <i class="right chevron icon"></i>

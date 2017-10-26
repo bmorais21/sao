@@ -1,8 +1,10 @@
 {% load static %}
+
+{% load i18n %}
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SAO - Sistema de Acompanhamento de Ocorrências</title>
+        <title>{% blocktrans %}SAO - Sistema de Acompanhamento de Ocorrências{% endblocktrans %}</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="{% static "css/semantic.min.css" %}">
         <link rel="stylesheet" href="{% static "css/estilo.css" %}">
@@ -18,7 +20,7 @@
 
         </section>
 
-        <footer class="ui inverted vertical footer segment rodape">Desenvolvido por Bruno Miguel Morais</footer>
+        <footer class="ui inverted vertical footer segment rodape">{% blocktrans %}Desenvolvido por Bruno Miguel Morais{% endblocktrans %} {% include 'include/language_selector.html' %} </footer>
 
         <script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
         <script src="{% static "css/semantic.min.js" %}"></script>

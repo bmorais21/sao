@@ -1,5 +1,7 @@
 {% extends 'include/base.html' %}
 
+{% load i18n %}
+
 {% block 'conteudo' %}
 {% if user.is_authenticated %}
     <meta http-equiv="refresh" content="0; url=/"/>
@@ -8,32 +10,32 @@
     <article class="six wide column">
 
         <nav class="ui text stackable menu">
-            <h2 class="ui header">Entrar</h2>
+            <h2 class="ui header">{% blocktrans %}Entrar{% endblocktrans %}</h2>
         </nav>
 
         <form method="POST" action="{% url 'login' %}" class="ui content form">
 
             {% if form.errors %}
                 <div class="ui negative message">
-                    <div class="header">Usuário ou Senha incorretos!</div>
-                    <p>Por favor, verifique os dados e tente novamente.</p>
+                    <div class="header">{% blocktrans %}Usuário ou Senha incorretos!{% endblocktrans %}</div>
+                    <p>{% blocktrans %}Por favor, verifique os dados e tente novamente.{% endblocktrans %}</p>
                 </div>
             {% endif %}
 
             {% csrf_token %}
 
             <div class="field">
-                <label>Usuário</label>
+                <label>{% blocktrans %}Usuário{% endblocktrans %}</label>
                 {{ form.username }}
             </div>
 
             <div class="field">
-                <label>Senha</label>
+                <label>{% blocktrans %}Senha{% endblocktrans %}</label>
                 {{ form.password }}
             </div>
             <input type="hidden" name="next" value="/"/>
             <div class="actions">
-                <input type="submit" class="ui right primary button" value="Entrar"/>
+                <input type="submit" class="ui right primary button" value="{% blocktrans %}Entrar{% endblocktrans %}"/>
             </div>
 
         </form>

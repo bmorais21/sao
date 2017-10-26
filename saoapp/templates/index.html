@@ -1,15 +1,14 @@
 {% extends 'include/base.html' %}
 
+{% load i18n %}
 {% block 'conteudo' %}
 <div class="two wide column"></div>
     <article class="eight wide column">
-
-        <h2 class="ui header">Seja Bem-Vindo</h2>
-        <h3>Bem-Vindo ao Sistema de Acompanhamento de Ocorrências (SAO)</h3>
-        <p>Este sistema foi desenvolvido para a disciplina de Desenvolvimento Web I, pelo aluno
-        Bruno Miguel Morais.</p>
-        <p>Para uma experiência completa, utilize o navegador Google Chrome.</p>
-
+        <h2 class="ui header">{% blocktrans %}Seja Bem-Vindo{% endblocktrans %}</h2>
+        <h3>{% blocktrans %}Bem-Vindo ao Sistema de Acompanhamento de Ocorrências (SAO) {% endblocktrans %}</h3>
+        <p>{% blocktrans %}Este sistema foi desenvolvido para a disciplina de Desenvolvimento Web I & II, pelo aluno
+        Bruno Miguel Morais.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Para uma experiência completa, utilize o navegador Google Chrome.{% endblocktrans %}</p>
     </article>
 
 {% endblock %}
