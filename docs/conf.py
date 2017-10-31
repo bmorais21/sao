@@ -38,7 +38,7 @@ import django
 
 sys.path.append(os.path.abspath('.'))
 sys.path.append(os.path.abspath('..'))
-sys.path.append(os.path.abspath('../../lib/python2.7/site-packages/'))
+# sys.path.append(os.path.abspath('../../lib/python2.7/site-packages/'))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sao.settings")
 django.setup()
 package_dir = path.abspath(path.dirname(__file__))
