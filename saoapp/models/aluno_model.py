@@ -8,7 +8,6 @@ from saoapp.models.turma_model import TurmaModel
 
 class AlunoModel(models.Model):
     """
-    Classe de model de aluno
 
     :param matricula: models.BigIntegerField(unique=True)
     :param nome: models.CharField(max_length=45)

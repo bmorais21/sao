@@ -6,12 +6,9 @@
 Bem-vindo à documentação do SAO!
 ================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
 Índice
 ******
 
-* :doc:`quick_start`
-* :doc:`requirements`
+.. toctree::
+   quick_start
+   modules/aluno

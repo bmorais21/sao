@@ -16,22 +16,32 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
-sys.path.insert(0, os.path.abspath('.'))
-from django.conf import settings
-settings.configure()
+import os, sys
+from os import path
 
-# -- General configuration ------------------------------------------------
+import django
 
-# If your documentation needs a minimal Sphinx version, state it here.
-#
-# needs_sphinx = '1.0'
+sys.path.append(os.path.abspath('.'))
+sys.path.append(os.path.abspath('..'))
+# sys.path.append(os.path.abspath('../../lib/python2.7/site-packages/'))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sao.settings")
+django.setup()
+package_dir = path.abspath(path.dirname(__file__))
+template_path = path.join(package_dir, 'themes')
+django.setup()
+local_path = lambda path: os.path.join(os.path.dirname(__file__), path)
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
-extensions = ['sphinx.ext.autodoc']
+sys.path.append(local_path('..'))
+
+
+extensions = ['sphinx.ext.autodoc',
+              'sphinx.ext.autosummary',
+              'sphinx.ext.doctest',
+              'sphinx.ext.intersphinx',
+              'sphinx.ext.todo',
+              'sphinx.ext.coverage',
+              'sphinx.ext.imgmath',
+              'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
