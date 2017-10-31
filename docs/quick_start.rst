@@ -19,18 +19,25 @@ Requerimentos
 Migração
 ********
 
-Para utilizar o projeto, é necessário executar o arquivo *migrations.sh*. Este arquivo
-execute os comandos *makemigrations* e *migrate*.
+Para utilizar o projeto, é necessário executar o arquivo *migrations.sh*::
+
+    $ ./migrations.sh
+
+Este arquivo contém os comandos *makemigrations* e *migrate*, necessários para criação e migração do banco de dados.
 
 Tradução
 ********
 
-Para ativar a tradução do site, é necessário executar o arquivo *translate.sh*.
+Para ativar a tradução do site, é necessário executar o arquivo *translate.sh*::
+
+    $ ./translate.sh
 
 População
 *********
 
-O sistema conta com arquivos de população da base de dados. Para utilizá-los, basta executar o arquivo *populate.sh*.
+O sistema conta com arquivos de população da base de dados. Para utilizá-los, basta executar o arquivo *populate.sh*::
+
+    $./populate.sh
 
 Pronto :D
 ---------

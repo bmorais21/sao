@@ -10,5 +10,10 @@ Bem-vindo à documentação do SAO!
 ******
 
 .. toctree::
+   requirements
    quick_start
    modules/aluno
+   modules/professor
+   modules/turma
+   modules/disciplina
+   modules/ocorrencia
