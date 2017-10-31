@@ -189,7 +189,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'SAO', u'SAO Documentation',
+    (master_doc, 'SAO', u'Documentação SAO',
      author, 'SAO', 'One line description of project.',
      'Miscellaneous'),
 ]
@@ -202,6 +202,6 @@ intersphinx_mapping = {
     'django': ('http://docs.djangoproject.com/en/1.8/', 'https://docs.djangoproject.com/en/1.8/_objects/'),
     'sphinx': ('http://sphinx.readthedocs.org/en/latest/', None),
 }
-# locale_dirs = ['../../lib/python2.7/site-packages/django/conf/locale/']
+locale_dirs = ['../../lib/python2.7/site-packages/django/conf/locale/']
 
 
