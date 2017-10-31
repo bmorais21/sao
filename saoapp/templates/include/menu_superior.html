@@ -1,10 +1,9 @@
 {% load staticfiles %}
 {% load i18n %}
 
-<header class="ui inverted huge borderless fluid menu superior">
+<header class="ui inverted huge borderless stackable fluid menu superior">
     <a href="{%url 'index' %}" class="header item"><h1>SAO</h1></a>
     {% if user.is_authenticated %}
-        <div class="left menu">
         {% if user.is_staff %}
             <a href="{% url 'ocorrencia_listar' %}" class="item">{% blocktrans %}Ocorrências{% endblocktrans %}</a>
             <a href="{% url 'aluno_listar' %}" class="item">{% blocktrans %}Alunos{% endblocktrans %}</a>
@@ -14,10 +13,7 @@
         {% else %}
             <a href="{% url 'ocorrencia_listar' %}" class="item">{% blocktrans %}Ocorrências{% endblocktrans %}</a>
         {% endif %}
-        </div>
-        <div class="right menu">
-            <a href="{% url 'perfil' %}" class="item">{% blocktrans %}Trocar Senha{% endblocktrans %}</a>
+            <a href="{% url 'perfil' %}" class="right item">{% blocktrans %}Trocar Senha{% endblocktrans %}</a>
             <a href="{% url 'logout' %}" class="item">{% blocktrans %}Sair{% endblocktrans %}</a>
-        </div>
     {% endif %}
 </header>

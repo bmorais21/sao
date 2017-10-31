@@ -6,16 +6,16 @@
 {% for language in languages %}
 
     {% if language.name_local == 'English' %}
-        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <form action="{% url 'set_language' %}" id="form" method="post" class="column">{% csrf_token %}
             <input name="next" type="hidden" value="{{ redirect_to }}" />
             <input id="language_selector" name="language" type="hidden" value="{{ language.code }}"/>
-            <button type="submit"><i class="us flag"></i></button>
+            <a id="submit" href="#" onclick="$(this).closest('form').submit()"><i class="us flag"></i></a>
         </form>
     {% else %}
-        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <form action="{% url 'set_language' %}" method="post" class="column">{% csrf_token %}
             <input name="next" type="hidden" value="{{ redirect_to }}" />
             <input id="language_selector" name="language" type="hidden" value="{{ language.code }}"/>
-            <button type="submit" class="ui borderless"><i class="br flag"></i></button>
+            <a id="submit" href="#" onclick="$(this).closest('form').submit()"><i class="br flag"></i></a>
         </form>
     {% endif %}
 {% endfor %}

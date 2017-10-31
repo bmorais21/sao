@@ -6,6 +6,7 @@
     <head>
         <title>{% blocktrans %}SAO - Sistema de Acompanhamento de Ocorrências{% endblocktrans %}</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <link rel="stylesheet" href="{% static "css/semantic.min.css" %}">
         <link rel="stylesheet" href="{% static "css/estilo.css" %}">
     </head>
@@ -20,8 +21,22 @@
 
         </section>
 
-        <footer class="ui inverted vertical footer segment rodape">{% blocktrans %}Desenvolvido por Bruno Miguel Morais{% endblocktrans %} {% include 'include/language_selector.html' %} </footer>
+        <footer class="ui inverted vertical footer segment rodape">
+            <div class="ui stackable grid">
+                <div class="two wide column"></div>
+                <div class="twelve wide column">
+                    <div class="row">
+                        {% blocktrans %}Desenvolvido por Bruno Miguel Morais{% endblocktrans %}
+                        |
+                        <a href="http://sao.readthedocs.io">{% blocktrans %}Documentação{% endblocktrans %}</a>
+                    </div>
+                    <div class="row">
+                        <div class="ui grid"><div class="seven wide column"></div>{% include 'include/language_selector.html' %}</div>
 
+                    </div>
+                </div>
+            </div>
+        </footer>
         <script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
         <script src="{% static "css/semantic.min.js" %}"></script>
     </body>
