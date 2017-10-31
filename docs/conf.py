@@ -202,6 +202,6 @@ intersphinx_mapping = {
     'django': ('http://docs.djangoproject.com/en/1.8/', 'https://docs.djangoproject.com/en/1.8/_objects/'),
     'sphinx': ('http://sphinx.readthedocs.org/en/latest/', None),
 }
-locale_dirs = ['../../lib/python2.7/site-packages/django/conf/locale/']
+# locale_dirs = ['../../lib/python2.7/site-packages/django/conf/locale/']
 
 
