@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-26 16:30-0200\n"
+"POT-Creation-Date: 2017-10-31 15:32-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,6 +137,11 @@ msgstr "Subject Registration"
 msgid "Disciplina"
 msgstr "Subject"
 
+#: saoapp/templates/disciplina/listar.html:12
+#: saoapp/templates/include/menu_superior.html:12
+msgid "Disciplinas"
+msgstr "Subjects"
+
 #: saoapp/templates/disciplina/listar.html:21
 msgid "Lista de Disciplinas"
 msgstr "List of Subjects"
@@ -149,9 +154,13 @@ msgstr "Register New Subject"
 msgid "SAO - Sistema de Acompanhamento de Ocorrências"
 msgstr "Welcome to Occurence Tracking System (SAO)"
 
-#: saoapp/templates/include/base.html:23
+#: saoapp/templates/include/base.html:29
 msgid "Desenvolvido por Bruno Miguel Morais"
 msgstr "Developed by Bruno Miguel Morais"
+
+#: saoapp/templates/include/base.html:31
+msgid "Documentação"
+msgstr "Documentation"
 
 #: saoapp/templates/include/menu_superior.html:9
 #: saoapp/templates/include/menu_superior.html:15
@@ -160,12 +169,9 @@ msgid "Ocorrências"
 msgstr "Occurences"
 
 #: saoapp/templates/include/menu_superior.html:11
+#: saoapp/templates/turma/listar.html:12
 msgid "Turmas"
 msgstr "Classes"
-
-#: saoapp/templates/include/menu_superior.html:12
-msgid "Disciplinas"
-msgstr "Subjects"
 
 #: saoapp/templates/include/menu_superior.html:13
 #: saoapp/templates/professor/listar.html:12
@@ -179,7 +185,7 @@ msgstr "Change Password"
 
 #: saoapp/templates/include/menu_superior.html:20
 msgid "Sair"
-msgstr "Exit"
+msgstr "Logout"
 
 #: saoapp/templates/index.html:7
 msgid "Seja Bem-Vindo"
@@ -331,11 +337,3 @@ msgstr "Change Password"
 #: saoapp/templates/usuario/trocar_senha.html:38
 msgid "Confirme a Nova Senha"
 msgstr "Confirm the new password"
-
-#~ msgid "Página %(dados.number)s de %(dados.paginator.num_pages)s"
-#~ msgstr "Page %(dados.number)s of %(dados.paginator.num_pages)s"
-
-#, fuzzy
-#~| msgid "Página %(dados.number)s de %(dados.paginator.num_pages)s"
-#~ msgid "Página %(page_obj.number)s de %(page_obj.paginator.num_pages)s"
-#~ msgstr "Page %(dados.number)s of %(dados.paginator.num_pages)s"
