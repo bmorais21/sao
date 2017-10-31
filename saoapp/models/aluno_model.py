@@ -7,7 +7,18 @@ from saoapp.models.turma_model import TurmaModel
 
 
 class AlunoModel(models.Model):
-    """Classe de model de aluno"""
+    """
+    Classe de model de aluno
+
+    :param matricula: models.BigIntegerField(unique=True)
+    :param nome: models.CharField(max_length=45)
+    :param sobrenome: models.CharField(max_length=45)
+    :param email: models.CharField(max_length=45)
+    :param telefone: models.IntegerField()
+    :param ativo: models.BooleanField(default=True)
+
+
+    """
 
     matricula = models.BigIntegerField(unique=True)
     nome = models.CharField(max_length=45)

@@ -7,7 +7,18 @@ from saoapp.models import ProfessorModel, AlunoModel, DisciplinaModel
 
 
 class OcorrenciaModel(models.Model):
-    """Classe de model de ocorrência"""
+    """
+    Classe de model de ocorrência
+
+    :param descricao: models.CharField(max_length=150)
+    :param data: models.DateField()
+    :param hora: models.TimeField()
+    :param aluno: models.ForeignKey(AlunoModel)
+    :param professor: models.ForeignKey(ProfessorModel)
+    :param disciplina: models.ForeignKey(DisciplinaModel)
+    :param ativo: models.BooleanField(default=True)
+
+    """
 
     descricao = models.CharField(max_length=150)
     data = models.DateField()

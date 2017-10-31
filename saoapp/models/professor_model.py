@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 
 class ProfessorModel(User):
-    """Classe de model de professor"""
+    """Classe de model de professor que herda de User"""
 
     def __unicode__(self):
         return self.first_name

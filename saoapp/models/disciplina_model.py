@@ -6,7 +6,12 @@ from django.db import models
 
 
 class DisciplinaModel(models.Model):
-    """Classe de model de disciplina"""
+    """
+    Classe de model de disciplina
+
+    :param disciplina: models.CharField(max_length=45)
+    :param ativo: models.BooleanField(default=True)
+    """
 
     disciplina = models.CharField(max_length=45)
     ativo = models.BooleanField(default=True)
