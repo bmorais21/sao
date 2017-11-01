@@ -1,7 +1,6 @@
 # coding: utf-8
 
 from __future__ import unicode_literals
-import user
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -20,7 +19,7 @@ class PerfilView(View):
         nova_senha = request.POST['nova_senha']
         confirmar_nova_senha = request.POST['confirmar_nova_senha']
         if nova_senha == confirmar_nova_senha:
-            user = User.objects.get(aluno_id=request.user.id)
+            user = User.objects.get(pk=request.user.id)
             user.set_password(nova_senha)
             user.save()
             return render(request, 'usuario/trocar_senha.html', {'ok': 'ok'})

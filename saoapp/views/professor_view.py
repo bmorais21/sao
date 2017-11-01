@@ -89,7 +89,7 @@ class ProfessorOcultarView(View):
         """Método GET"""
 
         if request.user.is_superuser:
-            professor = ProfessorModel.objects.get(aluno_id=professor_id)
+            professor = ProfessorModel.objects.get(pk=professor_id)
             if professor.is_active:
                 professor.is_active = False
             else:

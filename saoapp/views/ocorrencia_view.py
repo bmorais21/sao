@@ -23,7 +23,7 @@ class OcorrenciaListarView(View):
         if request.user.is_superuser:
             ocorrencia = OcorrenciaModel.objects.all()
         else:
-            ocorrencia = OcorrenciaModel.objects.filter(ativo=True)
+            ocorrencia = OcorrenciaModel.objects.filter(ativo=True, professor=request.user.id)
         paginator = Paginator(ocorrencia, 5)
         page = request.GET.get('page')
         try:
@@ -105,4 +105,7 @@ class OcorrenciaRelatorioView(View):
         """Método GET"""
 
         dado = OcorrenciaModel.objects.get(pk=ocorrencia_id)
-        return render(request, 'ocorrencia/relatorio.html', {'dado': dado})
+        if dado.professor.id == request.user.id:
+            return render(request, 'ocorrencia/relatorio.html', {'dado': dado})
+        else:
+            return redirect('index')

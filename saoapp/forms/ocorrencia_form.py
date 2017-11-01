@@ -17,12 +17,12 @@ class OcorrenciaForm(forms.ModelForm):
 
     data = forms.DateField(
         widget=forms.DateInput(
-            attrs={'required': 'True', 'type': 'date'}
+            attrs={'required': 'True', 'maxlength': 10, 'type': 'date', 'placeholder': 'Data (ex: 21/07/1998)'}
         )
     )
     hora = forms.TimeField(
         widget=forms.DateInput(
-            attrs={'required': 'True', 'type': 'time'}
+            attrs={'required': 'True', 'maxlength': 5, 'type': 'time', 'placeholder': 'Hora (ex: 11:30)'}
         )
     )
 
