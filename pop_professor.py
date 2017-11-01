@@ -4,10 +4,11 @@
 from __future__ import unicode_literals
 import os
 import django
-import saoapp.models.professor_model
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sao.settings')
 django.setup()
+
+import saoapp.models.professor_model
 
 def populate_professor():
     """Função de população de professor"""

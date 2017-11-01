@@ -4,11 +4,11 @@
 from __future__ import unicode_literals
 import os
 import django
-import saoapp.models.turma_model
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sao.settings')
 django.setup()
 
+import saoapp.models.turma_model
 
 def populate_turma():
     """Função de população de turma"""
