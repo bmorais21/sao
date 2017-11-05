@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-31 15:32-0200\n"
+"POT-Creation-Date: 2017-11-01 12:48-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgid "Cadastrar"
 msgstr "Register"
 
 #: saoapp/templates/aluno/listar.html:12
-#: saoapp/templates/include/menu_superior.html:10
+#: saoapp/templates/include/menu_superior.html:9
 msgid "Alunos"
 msgstr "Students"
 
@@ -138,7 +138,7 @@ msgid "Disciplina"
 msgstr "Subject"
 
 #: saoapp/templates/disciplina/listar.html:12
-#: saoapp/templates/include/menu_superior.html:12
+#: saoapp/templates/include/menu_superior.html:11
 msgid "Disciplinas"
 msgstr "Subjects"
 
@@ -162,28 +162,28 @@ msgstr "Developed by Bruno Miguel Morais"
 msgid "Documentação"
 msgstr "Documentation"
 
-#: saoapp/templates/include/menu_superior.html:9
-#: saoapp/templates/include/menu_superior.html:15
+#: saoapp/templates/include/menu_superior.html:8
+#: saoapp/templates/include/menu_superior.html:14
 #: saoapp/templates/ocorrencia/listar.html:12
 msgid "Ocorrências"
 msgstr "Occurences"
 
-#: saoapp/templates/include/menu_superior.html:11
+#: saoapp/templates/include/menu_superior.html:10
 #: saoapp/templates/turma/listar.html:12
 msgid "Turmas"
 msgstr "Classes"
 
-#: saoapp/templates/include/menu_superior.html:13
+#: saoapp/templates/include/menu_superior.html:12
 #: saoapp/templates/professor/listar.html:12
 msgid "Professores"
 msgstr "Teachers"
 
-#: saoapp/templates/include/menu_superior.html:19
+#: saoapp/templates/include/menu_superior.html:16
 #: saoapp/templates/usuario/trocar_senha.html:42
 msgid "Trocar Senha"
 msgstr "Change Password"
 
-#: saoapp/templates/include/menu_superior.html:20
+#: saoapp/templates/include/menu_superior.html:17
 msgid "Sair"
 msgstr "Logout"
 

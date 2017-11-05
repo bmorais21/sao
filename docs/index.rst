@@ -10,6 +10,7 @@ Bem-vindo à documentação do SAO!
 ******
 
 .. toctree::
+   docs
    requirements
    quick_start
    modules/aluno
