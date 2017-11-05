@@ -5,14 +5,14 @@ MER
 ---
 
 .. figure:: mer.png
-    :scale: 50%
+    :scale: 100%
     :alt: MER
 
 Diagrama de Classes
 -------------------
 
-.. figure::class.png
-    :scale: 50%
+.. figure:: class.png
+    :scale: 100%
     :alt: Diagrama de Classes
 
 
