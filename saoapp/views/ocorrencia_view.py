@@ -105,7 +105,7 @@ class OcorrenciaRelatorioView(View):
         """Método GET"""
 
         dado = OcorrenciaModel.objects.get(pk=ocorrencia_id)
-        if dado.professor.id == request.user.id:
+        if dado.professor.id == request.user.id or request.user.is_superuser:
             return render(request, 'ocorrencia/relatorio.html', {'dado': dado})
         else:
             return redirect('index')
